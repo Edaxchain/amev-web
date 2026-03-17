@@ -1,0 +1,80 @@
+:root {
+    --background: #FDFAF2;
+    --bg-secondary: #F6EFD8;
+    --bg-tertiary: #EDE4C8;
+    --foreground: #1A1206;
+    --text-main: #1A1206;
+    --text-sub: rgba(26, 18, 6, 0.45);
+    --border: rgba(26, 18, 6, 0.07);
+    --divider: #E2D9C0;
+    --button-primary: #F5A623;
+    --button-primary-text: #0C0A06;
+    --button-primary-hover: #FDE9B8;
+    --amber: #F5A623;
+    --amber-deep: #C47B1A;
+    --amber-pale: #FDE9B8;
+    --amber-tint: rgba(245, 166, 35, 0.10);
+    --amber-dim: rgba(245, 166, 35, 0.18);
+    --amber-border: rgba(245, 166, 35, 0.18);
+    --panel-dark: #0C0904;
+    --panel-dark-text: #FDFAF2;
+    --panel-dark-muted: rgba(253, 250, 242, 0.45);
+    --panel-dark-border: rgba(245, 166, 35, 0.18);
+}
+
+.dark {
+    --background: #0C0A06;
+    --bg-secondary: #161410;
+    --bg-tertiary: #1E1B14;
+    --foreground: #FDFAF2;
+    --text-main: #FDFAF2;
+    --text-sub: rgba(253, 250, 242, 0.45);
+    --border: rgba(245, 166, 35, 0.12);
+    --divider: rgba(245, 166, 35, 0.08);
+    --button-primary: #F5A623;
+    --button-primary-text: #0C0A06;
+    --button-primary-hover: #FDE9B8;
+    --amber: #F5A623;
+    --amber-deep: #C47B1A;
+    --amber-pale: #FDE9B8;
+    --amber-tint: rgba(245, 166, 35, 0.10);
+    --amber-dim: rgba(245, 166, 35, 0.18);
+    --amber-border: rgba(245, 166, 35, 0.18);
+    --bg-raised: #2A261C;
+    --panel-dark: #0C0904;
+    --panel-dark-text: #FDFAF2;
+    --panel-dark-muted: rgba(253, 250, 242, 0.45);
+    --panel-dark-border: rgba(245, 166, 35, 0.18);
+
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-bg-sub: var(--bg-secondary);
+    --color-bg-alt: var(--bg-tertiary);
+    --color-bg-raised: var(--bg-raised);
+    --color-amber: var(--amber);
+    --color-amber-deep: var(--amber-deep);
+    --color-amber-tint: var(--amber-tint);
+    --color-text-main: var(--text-main);
+    --color-text-sub: var(--text-sub);
+    --color-border: var(--border);
+    --color-divider: var(--divider);
+    --color-amber-border: var(--amber-border);
+    --color-button-primary: var(--button-primary);
+    --color-button-secondary: var(--button-primary-text);
+    --color-button-primary-hover: var(--button-primary-hover);
+    --color-amber: var(--amber);
+    --color-amber-deep: var(--amber-deep);
+    --color-amber-pale: var(--amber-pale);
+    --color-amber-tint: var(--amber-tint);
+    --color-amber-dim: var(--amber-dim);
+    --color-panel-dark: var(--panel-dark);
+    --color-panel-dark-text: var(--panel-dark-text);
+    --color-panel-dark-muted: var(--panel-dark-muted);
+    --color-panel-dark-border: var(--panel-dark-border);
+
+    --font-brand: "Cabinet Grotesk", sans-serif;
+    --font-editorial: "Fraunces", serif;
+}
