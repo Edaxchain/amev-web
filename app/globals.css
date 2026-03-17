@@ -11,7 +11,13 @@
         font-family: var(--font-brand);
     }
 
-    h1, h2, h3, h4, h5, h6, span {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
         color: var(--text-main);
         font-family: var(--font-brand);
         letter-spacing: -0.02em;
@@ -20,5 +26,10 @@
     p {
         color: var(--text-sub);
         line-height: 1.75;
+    }
+
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
     }
 }
