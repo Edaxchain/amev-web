@@ -54,9 +54,6 @@
     --color-bg-sub: var(--bg-secondary);
     --color-bg-alt: var(--bg-tertiary);
     --color-bg-raised: var(--bg-raised);
-    --color-amber: var(--amber);
-    --color-amber-deep: var(--amber-deep);
-    --color-amber-tint: var(--amber-tint);
     --color-text-main: var(--text-main);
     --color-text-sub: var(--text-sub);
     --color-border: var(--border);
