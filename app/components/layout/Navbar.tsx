@@ -8,12 +8,12 @@ import { Button } from "@/app/components/ui/button";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const menuItems = [
-        { name: 'About', href: '/' },
-        { name: 'Project', href: '/' },
-        { name: 'Solutions', href: '/' },
-        { name: 'Community', href: '/' },
-        { name: 'Partners', href: '/' },
-        { name: 'Contact', href: '/' }
+        { title: 'About', href: '/' },
+        { title: 'Project', href: '/' },
+        { title: 'Solutions', href: '/' },
+        { title: 'Community', href: '/' },
+        { title: 'Partners', href: '/' },
+        { title: 'Contact', href: '/' }
     ];
     return (
         <>
@@ -31,12 +31,12 @@ export default function Navbar() {
                 <div className="hidden md:flex gap-[2px]">
                     {menuItems.map((item) => (
                         <Button
-                            key={item.name}
+                            key={item.title}
                             asChild
                             variant="ghost"
-                            className="font-brand text-[13px] font-[500] text-text-sub hover:bg-foreground/10 hover:text-text-main h-auto py-[6px] px-[14px] rounded-[7px]"
+                            className="font-brand text-[12px] font-[500] text-text-sub hover:bg-foreground/10 hover:text-text-main h-auto py-[5px] px-[14px] rounded-[8px]"
                         >
-                            <Link href={item.href}>{item.name}</Link>
+                            <Link href={item.href}>{item.title}</Link>
                         </Button>
                     ))}
                 </div>
@@ -47,7 +47,7 @@ export default function Navbar() {
                     <Button
                         variant="outline"
                         asChild
-                        className="hidden sm:flex font-brand text-[13px] font-[500] text-text-sub border-border/60 hover:text-text-main hover:border-border h-auto py-[7px] px-[16px] rounded-[7px]"
+                        className="hidden sm:flex font-brand text-[12px] font-[500] text-text-sub border-border/60 hover:text-text-main hover:border-border h-auto py-[5px] px-[14px] rounded-[8px]"
                     >
                         <Link href="/">Login</Link>
                     </Button>
@@ -55,9 +55,9 @@ export default function Navbar() {
                     {/* Get quote button */}
                     <Button
                         asChild
-                        className="font-brand text-[12px] md:text-[13px] font-[700] text-button-primary-text bg-button-primary hover:bg-button-primary-hover hover:shadow-[0_0_0_3px_rgba(245,166,35,0.25),0_4px_20px_rgba(245,166,35,0.3)] hover:-translate-y-[1px] active:scale-[0.98] h-auto py-[7px] px-[12px] md:px-[18px] rounded-[7px] transition-all"
+                        className="font-brand text-[11px] md:text-[12px] font-[700] text-button-primary-text bg-button-primary hover:bg-button-primary-hover hover:shadow-[0_0_0_3px_rgba(245,166,35,0.25),0_4px_20px_rgba(245,166,35,0.3)] hover:-translate-y-[0.5px] active:scale-[0.98] h-auto py-[6px] px-[10px] md:px-[16px] rounded-[8px] transition-all"
                     >
-                        <Link href="/">Get quote</Link>
+                        <Link href="/">Partner with us</Link>
                     </Button>
 
                     {/* Hamburger Button */}
@@ -80,19 +80,19 @@ export default function Navbar() {
                 <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
                     {menuItems.map((item) => (
                         <Button
-                            key={item.name}
+                            key={item.title}
                             asChild
                             variant="link"
                             onClick={() => setIsOpen(false)}
                             className="font-brand text-xl text-text-main transition-colors tracking-widest h-auto decoration-transparent"
                         >
-                            <Link href={item.href}>{item.name}</Link>
+                            <Link href={item.href}>{item.title}</Link>
                         </Button>
                     ))}
                     <Button
                         asChild
                         variant="outline"
-                        className="mt-4 w-full font-brand text-sm font-bold text-text-sub border-border py-6 rounded-xl"
+                        className="mt-4 w-full font-brand text-sm font-medium text-text-sub border-border py-6 rounded-[8px]"
                     >
                         <Link href="/">Login</Link>
                     </Button>
