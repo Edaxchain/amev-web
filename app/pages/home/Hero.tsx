@@ -34,18 +34,19 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative flex flex-col lg:flex-row min-h-[82vh] bg-panel-dark overflow-hidden border-b-2 border-amber">            <div className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-amber/5 blur-[120px] pointer-events-none" />
-
+        <section className="relative flex flex-col lg:flex-row h-auto lg:h-[60vh] min-h-[540px] bg-panel-dark overflow-hidden border-b border-amber/10 items-start pt-4 lg:pt-6">
+            {/* Background Glow */}
+            <div className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-amber/5 blur-[120px] pointer-events-none" />
             {/* Left Content */}
             <motion.div
-                className="flex-1 flex items-center px-6 md:px-[52px] py-20 lg:py-0 z-10"
+                className="flex-1 flex items-center px-6 md:px-[52px] py-4 lg:py-6 z-10"
                 initial="hidden"
                 animate="visible"
                 variants={containerVars}
             >
                 <div className="max-w-2xl">
                     {/* Pills */}
-                    <motion.div variants={itemVars} className="flex flex-wrap gap-2 mb-8">
+                    <motion.div variants={itemVars} className="flex flex-wrap gap-2 mb-4">
                         {['Solar Installation', 'Blockchain Tokens', 'Live Exchange'].map((text) => (
                             <div key={text} className="flex items-center gap-2 bg-amber-deep/10 border border-amber-border/60 px-3 py-1.5 rounded-full shadow-sm">
                                 <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
@@ -78,14 +79,13 @@ export default function Hero() {
             </motion.div>
 
             {/* Right Content */}
-            <div className="flex-1 flex flex-col items-center justify-end lg:justify-center p-6 md:p-12 relative">
-
+            <div className="flex-1 flex flex-col items-center justify-start h-full p-4 relative lg:pt-0 gap-2 md:gap-4">
                 {/* Sun Visual */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    animate={{ opacity: 1, scale: 0.8 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                    className="relative flex items-center justify-center lg:mb-[-40px] z-10"
+                    className="relative flex items-center justify-center lg:mb-[-80px] z-10"
                 >
                     <svg width="260" height="260" viewBox="0 0 260 260" fill="none" className="overflow-visible scale-90 md:scale-110">
                         <defs>
@@ -129,8 +129,8 @@ export default function Hero() {
 
                 {/* Dashboard Card */}
                 <motion.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 40 }}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 20 }}
                     transition={{ type: "spring", damping: 15, stiffness: 60, delay: 0.8 }}
                     className="w-full max-w-md bg-amber-deep/5 backdrop-blur-xl border border-panel-dark-border rounded-t-2xl overflow-hidden shadow-2xl relative z-20 transition-all hover:border-amber/40"
                 >
@@ -138,15 +138,15 @@ export default function Hero() {
                         <div className="flex gap-1.5">
                             <div className="w-2 h-2 rounded-full bg-amber/30" /><div className="w-2 h-2 rounded-full bg-amber/20" /><div className="w-2 h-2 rounded-full bg-amber/10" />
                         </div>
-                        <div className="text-[9px] font-brand text-panel-dark-muted/60 tracking-widest">app.amev.io/dashboard</div>
+                        <div className="text-[7px] font-brand text-panel-dark-muted/60 tracking-widest">app.amev.io/dashboard</div>
                     </div>
-                    <div className="p-6 flex flex-col gap-6">
+                    <div className="p-4 flex flex-col gap-4">
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-3">
                                 <div className="text-2xl animate-bounce">☀️</div>
                                 <div>
-                                    <div className="font-brand text-sm font-bold text-panel-dark-text">SOLR Token</div>
-                                    <div className="font-brand text-[9px] text-panel-dark-muted/60 uppercase tracking-wider">1 token = 1 kWh generated</div>
+                                    <div className="font-brand text-xl font-bold text-panel-dark-text">SOLR Token</div>
+                                    <div className="font-brand text-[10px] text-panel-dark-muted/60 uppercase tracking-wider">1 token = 1 kWh generated</div>
                                 </div>
                             </div>
                             <div className="text-right">
@@ -155,16 +155,16 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-2 gap-2">
                             {tokenStats.map((stat) => (
-                                <div key={stat.label} className="bg-amber/5 border border-amber/10 p-4 rounded-xl hover:bg-amber/10 transition-colors cursor-default">
-                                    <div className="font-brand text-[9px] font-bold text-amber/30 uppercase tracking-widest mb-1">{stat.label}</div>
-                                    <div className={`font-brand text-xl font-black ${stat.up ? 'text-green-400' : 'text-white'}`}>{stat.value}</div>
+                                <div key={stat.label} className="bg-amber/5 border border-amber/10 p-2 rounded-xl hover:bg-amber/10 transition-colors cursor-default">
+                                    <div className="font-brand text-[10px] font-bold text-amber/30 uppercase tracking-widest mb-1">{stat.label}</div>
+                                    <div className={`font-brand text-l font-black ${stat.up ? 'text-green-400' : 'text-panel-dark-text'}`}>{stat.value}</div>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="bg-amber/10 border border-amber/20 p-4 rounded-xl flex justify-between items-center">
+                        <div className="bg-amber/10 border border-amber/20 p-2 rounded-xl flex justify-between items-center">
                             <div className="font-brand text-[10px] font-bold text-amber/50 uppercase">Est. monthly earnings · 100kW system</div>
                             <div className="font-brand text-lg font-black text-amber">~$1,880 / mo</div>
                         </div>
