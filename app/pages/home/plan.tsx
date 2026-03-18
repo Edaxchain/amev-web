@@ -35,13 +35,40 @@ const Card = ({
     description: string;
     status: string;
 }) => {
+    const isInProgress = status === "In progress";
+
     return (
-        <div className="bg-amber-light p-6 rounded-2xl">
-            <h3 className="text-2xl font-bold">{title}</h3>
-            <h3 className="text-xl uppercase">{subtitle}</h3>
-            <p className="text-text-sub mt-4">{description}</p>
-            <div className="bg-amber-deep p-2 rounded-md">
-                <span>{status}</span>
+        <div
+            className={`p-6 rounded-2xl transition-colors duration-500 ${
+                isInProgress
+                    ? "bg-foreground text-background"
+                    : "bg-amber-light text-foreground"
+            }`}
+        >
+            <h3
+                className={`text-2xl font-bold ${isInProgress ? "text-amber" : ""}`}
+            >
+                {title}
+            </h3>
+            <h3
+                className={`text-xl uppercase ${isInProgress ? "text-amber-deep" : ""}`}
+            >
+                {subtitle}
+            </h3>
+
+            <p
+                className={`mt-4 ${isInProgress ? "text-panel-dark-muted" : "text-text-sub"}`}
+            >
+                {description}
+            </p>
+
+            {/* Status Badge */}
+            <div
+                className={`p-2 rounded-md mt-4 inline-block ${
+                    isInProgress ? "bg-amber text-white" : "bg-amber-deep"
+                }`}
+            >
+                <span className="text-sm font-medium">{status}</span>
             </div>
         </div>
     );
@@ -87,21 +114,24 @@ export default function Plan() {
     ];
 
     return (
-        <section className="bg-amber p-10 lg:p-20 flex flex-col gap-12 lg:gap-16">
+        <section
+            id="plan"
+            className="bg-amber p-10 lg:p-20 flex flex-col gap-12 lg:gap-16"
+        >
             <div className="flex flex-col lg:flex-row justify-between gap-10">
                 <div>
                     <span className="text-amber-deep tracking-widest text-xs uppercase mb-4">
                         Project Timeline
                     </span>
-                    <h1 className="text-text-main text-4xl sm:text-5xl md:text-6xl font-bold">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
                         Implementation plan
                     </h1>
-                    <p className="text-text-main text-3xl sm:text-4xl md:text-6xl mt-6 max-w-xl">
+                    <p className="text-text-main text-3xl sm:text-4xl md:text-6xl mt-6 max-w-xl italic">
                         2021-2029
                     </p>
                 </div>
                 <div>
-                    <p className="text-text-sub mt-6 max-w-xl">
+                    <p className="text-text-sub mt-6 max-w-xl text-right">
                         Sustainable urban development in the future under the
                         development framework of the Renewable Energy Power
                         Plant Industry.
@@ -110,7 +140,7 @@ export default function Plan() {
             </div>
 
             <ProgressBar progress="50%" />
-            <div className="grid grid-cols-1 px-[15vw] lg:px-0 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 px-[10vw] lg:px-0 lg:grid-cols-5 gap-6">
                 {cards.map((card, index) => (
                     <Card
                         key={index}
