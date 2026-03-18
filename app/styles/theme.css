@@ -12,6 +12,7 @@
     --button-primary-hover: #FDE9B8;
     --amber: #F5A623;
     --amber-deep: #C47B1A;
+    --amber-light: #e48f21;
     --amber-pale: #FDE9B8;
     --amber-tint: rgba(245, 166, 35, 0.10);
     --amber-dim: rgba(245, 166, 35, 0.18);
@@ -36,6 +37,7 @@
     --button-primary-hover: #FDE9B8;
     --amber: #F5A623;
     --amber-deep: #C47B1A;
+    --amber-light: #e48f21;
     --amber-pale: #FDE9B8;
     --amber-tint: rgba(245, 166, 35, 0.10);
     --amber-dim: rgba(245, 166, 35, 0.18);
@@ -64,6 +66,7 @@
     --color-button-primary-hover: var(--button-primary-hover);
     --color-amber: var(--amber);
     --color-amber-deep: var(--amber-deep);
+    --color-amber-light: var(--amber-light);
     --color-amber-pale: var(--amber-pale);
     --color-amber-tint: var(--amber-tint);
     --color-amber-dim: var(--amber-dim);
