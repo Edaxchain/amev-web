@@ -2,6 +2,7 @@ import Hero from './Hero'
 import Rating from './Rating'
 import Stats from './Stats'
 import ProjectBackground from './Background'
+import Solution from './Solution'
 
 export default function LandingPage() {
     return (
@@ -10,6 +11,7 @@ export default function LandingPage() {
         <Rating />
         <Stats />
         <ProjectBackground />
+        <Solution />
         </main>
 
 
