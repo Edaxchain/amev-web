@@ -55,7 +55,7 @@ export default function Solution() {
                         </div>
                         <h2 className="font-brand text-4xl md:text-5xl font-[900] text-text-main leading-none mb-4">
                             Three ways to harvest.<br />
-                            <span className="italic font-serif font-light text-amber-deep">One token for all.</span>
+                            <span className="italic font-editorial font-light text-amber-deep">One token for all.</span>
                         </h2>
                     </div>
                     <p className="font-brand text-[13px] text-text-main/50 max-w-[280px] text-left md:text-right leading-relaxed">
@@ -71,9 +71,9 @@ export default function Solution() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white rounded-[24px] overflow-hidden border border-border shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col"
+                            className="bg-bg-sub rounded-[24px] overflow-hidden border border-border shadow-sm hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-out group flex flex-col"
                         >
-                            <div className={`h-48 relative overflow-hidden bg-panel-dark`}>
+                            <div className={`h-32 relative overflow-hidden bg-panel-dark`}>
                                 <div className={`absolute inset-0 bg-gradient-to-b ${item.color} opacity-60`} />
                                 <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-30 group-hover:opacity-50 transition-opacity">
                                     {[...Array(4)].map((_, i) => (
@@ -82,7 +82,7 @@ export default function Solution() {
                                 </div>
                             </div>
 
-                            <div className="p-8 flex-1 flex flex-col">
+                            <div className="p-4 flex-1 flex flex-col">
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="flex items-center gap-2">
                                         <div className="w-8 h-8 rounded-lg bg-background border border-border flex items-center justify-center">
@@ -95,30 +95,30 @@ export default function Solution() {
                                     </span>
                                 </div>
 
-                                <p className="font-brand text-[13px] text-text-main/60 leading-relaxed mb-8 h-12">
+                                <p className="font-brand text-[13px] text-text-main/60 leading-relaxed mb-5 h-auto">
                                     {item.desc}
                                 </p>
 
-                                <div className="bg-amber-dim rounded-2xl p-6 mb-2">
-                                    <div className="flex justify-between items-center mb-4 border-b border-divider pb-2">
-                                        <span className="text-[12px] text-text-main/40 uppercase tracking-wider">{item.stats}</span>
-                                        <span className="text-text-main text-[12px] font-bold">↗ {item.yield}</span>
+                                <div className="bg-amber-dim rounded-2xl p-4 mb-2">
+                                    <div className="flex justify-between items-center mb-2 border-b border-divider pb-2">
+                                        <span className="text-[11px] text-text-main/40 uppercase tracking-wider">{item.stats}</span>
+                                        <span className="text-text-main text-[11px] font-bold">↗ {item.yield}</span>
                                     </div>
                                     <p className="text-text-main/30 text-[10px] font-bold uppercase tracking-widest mb-1">Est. Monthly Value</p>
                                     <h4 className="text-text-main text-xl font-black tracking-tight">{item.monthly}</h4>
-                                    <p className="text-text-main/30 text-[10px] mt-1">tokens + energy savings est.</p>
+                                    <p className="text-text-main/30 text-[10px]">tokens + energy savings est.</p>
                                 </div>
 
-                                <div className="flex flex-wrap gap-2 mb-4">
+                                <div className="flex flex-wrap gap-1.5 mb-4">
                                     {item.tags.map(tag => (
-                                        <span key={tag} className="text-[11px] font-bold text-text-main bg-amber-pale px-3 py-1 rounded-md">
+                                        <span key={tag} className="text-[11px] font-bold text-text-main bg-amber-pale px-2 py-0.5 rounded-md">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
 
 
-                                <div className="mt-auto pt-4 border-t border-border flex justify-between items-center group/btn cursor-pointer">
+                                <div className="mt-auto pt-3 border-t border-border flex justify-between items-center group/btn cursor-pointer">
                                     <span className="font-brand text-xs font-bold text-amber-deep transition-colors group-hover/btn:text-amber">
                                         Learn more
                                     </span>

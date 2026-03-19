@@ -3,6 +3,7 @@ import Rating from './Rating'
 import Stats from './Stats'
 import ProjectBackground from './Background'
 import Solution from './Solution'
+import HowItWorks from './Works'
 
 export default function LandingPage() {
     return (
@@ -12,6 +13,7 @@ export default function LandingPage() {
         <Stats />
         <ProjectBackground />
         <Solution />
+        <HowItWorks />
         </main>
 
 

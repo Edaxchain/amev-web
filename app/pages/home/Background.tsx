@@ -26,7 +26,7 @@ export default function ProjectBackground() {
                         </div>
 
                         <h2 className="font-brand text-3xl md:text-4xl lg:text-5xl font-[900] text-text-main leading-[1.05] tracking-tight mb-4">
-                            Building the <span className="italic font-serif font-light text-amber-deep">smart energy</span> infrastructure of Southeast Asia.
+                            Building the <span className="italic font-editorial font-light text-amber-deep">smart energy</span> infrastructure of Southeast Asia.
                         </h2>
 
                         <div className="space-y-4 font-brand text-[15px] leading-relaxed text-text-sub max-w-xl">

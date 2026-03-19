@@ -59,7 +59,7 @@ export default function Hero() {
                     <motion.h1 variants={itemVars} className="font-brand text-4xl md:text-6xl font-black text-panel-dark-text leading-[0.95] tracking-tighter mb-6">
                         Powering <span className="text-amber">ASEAN's</span><br />
                         clean energy <br />
-                        <span className="italic font-serif font-light text-panel-dark-text">future.</span>
+                        <span className="italic font-editorial font-light text-panel-dark-text">future.</span>
                     </motion.h1>
 
                     <motion.p variants={itemVars} className="font-brand text-lg text-panel-dark-text/50 leading-relaxed mb-10 max-w-lg">
