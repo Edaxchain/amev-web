@@ -60,7 +60,7 @@
     --color-divider: var(--divider);
     --color-amber-border: var(--amber-border);
     --color-button-primary: var(--button-primary);
-    --color-button-secondary: var(--button-primary-text);
+    --color-button-primary-text: var(--button-primary-text);
     --color-button-primary-hover: var(--button-primary-hover);
     --color-amber: var(--amber);
     --color-amber-deep: var(--amber-deep);

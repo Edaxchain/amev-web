@@ -34,7 +34,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative flex flex-col lg:flex-row h-auto lg:h-[60vh] min-h-[540px] bg-panel-dark overflow-hidden border-b border-amber/10 items-start pt-4 lg:pt-6">
+        <section id="hero" className="relative flex flex-col lg:flex-row h-auto lg:h-[60vh] min-h-[540px] bg-panel-dark overflow-hidden border-b border-amber/10 items-start pt-4 lg:pt-6">
             {/* Background Glow */}
             <div className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-amber/5 blur-[120px] pointer-events-none" />
             {/* Left Content */}
