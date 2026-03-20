@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Sun, Menu, X } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
+import { ModeToggle } from "@/app/components/ui/modeToggle"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex gap-[2px]">
+                <div className="hidden lg:flex gap-[2px]">
                     {menuItems.map((item) => (
                         <Button
                             key={item.title}
@@ -43,11 +44,12 @@ export default function Navbar() {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-[6px] md:gap-[8px]">
+                    <ModeToggle />
                     {/* Login Button */}
                     <Button
                         variant="outline"
                         asChild
-                        className="hidden sm:flex font-brand text-[12px] font-[500] text-text-sub border-border/60 hover:text-text-main hover:border-border h-auto py-[5px] px-[14px] rounded-[8px]"
+                        className="hidden lg:flex font-brand text-[12px] font-[500] text-text-sub border-border/60 hover:text-text-main hover:border-border h-auto py-[5px] px-[14px] rounded-[8px]"
                     >
                         <Link href="/">Login</Link>
                     </Button>
@@ -65,7 +67,7 @@ export default function Navbar() {
                         variant="ghost"
                         size="icon"
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden p-0 h-10 w-10 text-text-main active:scale-90"
+                        className="lg:hidden p-0 h-10 w-10 text-text-main active:scale-90"
                     >
                         {isOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
                     </Button>
@@ -74,7 +76,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             <div className={`
-                fixed inset-0 z-[90] bg-background backdrop-blur-xl transition-all duration-300 md:hidden
+                fixed inset-0 z-[90] bg-background backdrop-blur-xl transition-all duration-300 lg:hidden
                 ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}
             `}>
                 <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
@@ -92,7 +94,7 @@ export default function Navbar() {
                     <Button
                         asChild
                         variant="outline"
-                        className="mt-4 w-full font-brand text-sm font-medium text-text-sub border-border py-6 rounded-[8px]"
+                        className="mt-4 w-full font-brand text-sm font-medium text-text-main border-border py-6 rounded-[8px]"
                     >
                         <Link href="/">Login</Link>
                     </Button>

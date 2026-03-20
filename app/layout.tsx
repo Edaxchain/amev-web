@@ -1,5 +1,6 @@
 import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
+import { ThemeProvider } from "@/app/contexts/ThemeProvider";
 //import { WalletContextProvider } from "@/app/contexts/WalletContextProvider";
 //import { NextIntlClientProvider } from "next-intl";
 //import { getMessages } from "next-intl/server";
@@ -13,8 +14,14 @@ export default async function RootLayout({
     //const messages = await getMessages();
 
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body>
+                <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
               {/*
                 <NextIntlClientProvider messages={messages}>
                     <WalletContextProvider>
@@ -28,6 +35,7 @@ export default async function RootLayout({
                     </WalletContextProvider>
                 </NextIntlClientProvider>
                 */}
+                </ThemeProvider>
             </body>
         </html>
     );
