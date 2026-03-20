@@ -111,7 +111,7 @@ export default function Solution() {
 
                                 <div className="flex flex-wrap gap-1.5 mb-4">
                                     {item.tags.map(tag => (
-                                        <span key={tag} className="text-[11px] font-bold text-text-main bg-amber-pale px-2 py-0.5 rounded-md">
+                                        <span key={tag} className="text-[11px] font-bold text-amber-deep bg-amber-pale px-2 py-0.5 rounded-md">
                                             {tag}
                                         </span>
                                     ))}

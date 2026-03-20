@@ -51,7 +51,7 @@ export default function BlockchainSection() {
                         <div className="space-y-4">
                             {features.map((f, i) => (
                                 <div key={i} className="flex gap-2 group pb-3 border-b border-divider last:border-0">
-                                    <div className="w-10 h-10 shrink-0 bg-amber-pale/40 rounded-lg flex items-center justify-center border border-border group-hover:border-amber/50 group-hover:bg-amber/30 transition-colors">
+                                    <div className="w-10 h-10 shrink-0 bg-amber-pale/20 rounded-lg flex items-center justify-center border border-border group-hover:border-amber/50 group-hover:bg-amber/30 transition-colors">
                                         {f.icon}
                                     </div>
                                     <div>
@@ -105,7 +105,7 @@ export default function BlockchainSection() {
                         <div>
                             <div className="flex justify-between items-center mb-2">
                                 <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-amber rounded-full animate-ping" />
+                                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-ping" />
                                     <span className="text-amber text-[12px] font-bold uppercase tracking-widest">Live Markets</span>
                                 </div>
                                 <button className="text-panel-dark-text text-[12px] font-bold flex items-center gap-1 hover:text-amber transition-colors duration-300">

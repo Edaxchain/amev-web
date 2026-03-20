@@ -39,14 +39,14 @@ export default function Hero() {
             <div className="absolute top-[-200px] left-[-100px] w-[600px] h-[600px] rounded-full bg-amber/5 blur-[120px] pointer-events-none" />
             {/* Left Content */}
             <motion.div
-                className="flex-1 flex items-center px-6 md:px-[52px] py-4 lg:py-6 z-10"
+                className="flex-1 w-full flex flex-col items-center lg:items-start px-6 md:px-[52px] py-6 lg:py-0 z-10 text-center lg:text-left justify-center"
                 initial="hidden"
                 animate="visible"
                 variants={containerVars}
             >
-                <div className="max-w-2xl">
+                <div className="max-w-2xl flex flex-col">
                     {/* Pills */}
-                    <motion.div variants={itemVars} className="flex flex-wrap gap-2 mb-4">
+                    <motion.div variants={itemVars} className="flex flex-wrap justify-center lg:justify-start gap-2 mb-4">
                         {['Solar Installation', 'Blockchain Tokens', 'Live Exchange'].map((text) => (
                             <div key={text} className="flex items-center gap-2 bg-amber-deep/10 border border-amber-border/60 px-3 py-1.5 rounded-full shadow-sm">
                                 <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
@@ -62,12 +62,12 @@ export default function Hero() {
                         <span className="italic font-editorial font-light text-panel-dark-text">future.</span>
                     </motion.h1>
 
-                    <motion.p variants={itemVars} className="font-brand text-lg text-panel-dark-text/50 leading-relaxed mb-10 max-w-lg">
+                    <motion.p variants={itemVars} className="font-brand text-lg text-panel-dark-muted leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
                         AMEV is developing <span className="text-panel-dark-text">368 megawatts of renewable energy infrastructure</span> across Thailand and Southeast Asia — combining solar power generation with blockchain technology.
                     </motion.p>
 
                     {/* Buttons */}
-                    <motion.div variants={itemVars} className="flex flex-wrap gap-4">
+                    <motion.div variants={itemVars} className="flex flex-wrap justify-center lg:justify-start gap-4 w-full">
                         <Button asChild className="font-brand text-[13px] font-bold bg-button-primary text-button-primary-text hover:bg-button-primary-hover rounded-[6px] h-[52px] px-8 shadow-lg shadow-amber/10 transition-all hover:-translate-y-1">
                             <Link href="#" className="flex items-center gap-2">Get a Free Quote <ArrowRight size={18} strokeWidth={3} /></Link>
                         </Button>
@@ -79,7 +79,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Right Content */}
-            <div className="flex-1 flex flex-col items-center justify-start h-full p-4 relative lg:pt-0 gap-2 md:gap-4">
+            <div className="flex-1 w-full flex flex-col items-center justify-center lg:justify-start h-full p-4 relative lg:pt-0 gap-8 md:gap-4 lg:mt-0">
                 {/* Sun Visual */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.6 }}
