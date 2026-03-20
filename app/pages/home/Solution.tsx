@@ -53,12 +53,12 @@ export default function Solution() {
                                 Installation Solutions
                             </span>
                         </div>
-                        <h2 className="font-brand text-4xl md:text-5xl font-[900] text-text-main leading-none mb-4">
+                        <h2 className="font-brand text-4xl font-[900] text-text-main leading-none">
                             Three ways to harvest.<br />
                             <span className="italic font-editorial font-light text-amber-deep">One token for all.</span>
                         </h2>
                     </div>
-                    <p className="font-brand text-[13px] text-text-main/50 max-w-[280px] text-left md:text-right leading-relaxed">
+                    <p className="font-brand text-[13px] text-text-sub max-w-[280px] text-left md:text-right leading-relaxed">
                         Every installation type generates SOLR tokens automatically. Same token, same exchange, any site.
                     </p>
                 </div>

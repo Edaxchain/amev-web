@@ -4,6 +4,8 @@ import Stats from './Stats'
 import ProjectBackground from './Background'
 import Solution from './Solution'
 import HowItWorks from './Works'
+import CommunityImpact from './Impact'
+import BlockchainSection from './Blockchain'
 
 export default function LandingPage() {
     return (
@@ -14,6 +16,8 @@ export default function LandingPage() {
         <ProjectBackground />
         <Solution />
         <HowItWorks />
+        <CommunityImpact />
+        <BlockchainSection />
         </main>
 
 

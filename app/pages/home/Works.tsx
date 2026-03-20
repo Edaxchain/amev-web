@@ -32,10 +32,10 @@ const steps = [
 
 export default function HowItWorks() {
     return (
-        <section id="works" className="bg-background py-12 md:py-12">
+        <section id="works" className="bg-background py-10 md:py-12">
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px]">
 
-                <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-8">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-8">
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-[1px] w-8 bg-amber" />
@@ -43,12 +43,12 @@ export default function HowItWorks() {
                                 How it works
                             </span>
                         </div>
-                        <h2 className="font-brand text-3xl md:text-4xl lg:text-5xl font-[900] text-text-main leading-[1.1] tracking-tight">
+                        <h2 className="font-brand text-4xl font-[900] text-text-main leading-none">
                             From installation<br />
                             <span className="italic font-editorial font-light text-amber-deep">to token — automatically.</span>
                         </h2>
                     </div>
-                    <p className="font-brand text-[13px] text-text-sub max-w-[280px] leading-relaxed pt-12">
+                    <p className="font-brand text-[13px] text-text-sub max-w-[280px] text-left md:text-right md:pt-12 leading-relaxed">
                         Same four steps for all installation types. We handle the hardware, the blockchain handles the rest.
                     </p>
                 </div>
