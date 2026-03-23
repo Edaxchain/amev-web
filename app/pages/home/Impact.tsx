@@ -62,12 +62,12 @@ export default function CommunityImpact() {
                         className="max-w-2xl"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="h-[1px] w-8 bg-amber" />
+                            <div className="h-px w-8 bg-amber" />
                             <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
                                 Community Impact
                             </span>
                         </div>
-                        <h2 className="font-brand text-4xl font-[900] text-panel-dark-text leading-none tracking-tight">
+                        <h2 className="font-brand text-4xl text-panel-dark-text leading-none tracking-tight">
                             Energy that gives back<br />
                             <span className="italic font-editorial font-light text-amber-deep">to the community.</span>
                         </h2>
