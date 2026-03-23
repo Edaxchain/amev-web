@@ -8,6 +8,7 @@ import CommunityImpact from "./Impact";
 import BlockchainSection from "./Blockchain";
 import Plan from "./Plan";
 import Built from "./Built";
+import Partner from "./Partner";
 
 export default function LandingPage() {
     return (
@@ -22,6 +23,7 @@ export default function LandingPage() {
             <BlockchainSection />
             <Plan />
             <Built />
+            <Partner />
         </main>
     );
 }

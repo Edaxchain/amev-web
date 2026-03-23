@@ -10,6 +10,9 @@
     --button-primary: #F5A623;
     --button-primary-text: #0C0A06;
     --button-primary-hover: #FDE9B8;
+    --button-secondary: #0C0A06;
+    --button-secondary-text: #FDFAF2;
+    --button-secondary-hover: #28241d;
     --amber: #F5A623;
     --amber-deep: #C47B1A;
     --amber-light: #e48f21;
@@ -35,6 +38,9 @@
     --button-primary: #F5A623;
     --button-primary-text: #0C0A06;
     --button-primary-hover: #FDE9B8;
+    --button-secondary: #0C0A06;
+    --button-secondary-text: #FDFAF2;
+    --button-secondary-hover: #1A1206;
     --amber: #F5A623;
     --amber-deep: #C47B1A;
     --amber-light: #e48f21;
@@ -64,6 +70,9 @@
     --color-button-primary: var(--button-primary);
     --color-button-primary-text: var(--button-primary-text);
     --color-button-primary-hover: var(--button-primary-hover);
+    --color-button-secondary: var(--button-secondary);
+    --color-button-secondary-text: var(--button-secondary-text);
+    --color-button-secondary-hover: var(--button-secondary-hover);
     --color-amber: var(--amber);
     --color-amber-deep: var(--amber-deep);
     --color-amber-light: var(--amber-light);

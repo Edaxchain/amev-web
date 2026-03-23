@@ -14,7 +14,7 @@ const Card = ({
 }) => {
     return (
         <div className="p-10 rounded-2xl transition-all duration-300 border border-amber-deep/60 text-center h-full flex flex-col items-center gap-6 group hover:bg-panel-dark-muted/5 hover:border-amber-deep/30">
-            <div className="p-4 bg-panel-dark-muted/10 rounded-full group-hover:bg-amber-deep/10 transition-colors">
+            <div className="p-4 bg-panel-dark-muted/10 rounded-full group-hover:bg-amber-deep/10">
                 <Icon className="w-10 h-10 text-amber-deep" strokeWidth={1.2} />
             </div>
             <div className="flex flex-col gap-1">
@@ -114,19 +114,18 @@ export default function Built() {
                     variants={containerVars}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true }}
                 >
                     {cards.map((card, index) => (
                         <motion.div
                             key={index}
                             variants={itemVars}
-                            whileHover={{ y: -8 }}
                             transition={{
                                 type: "spring",
                                 stiffness: 300,
                                 damping: 20,
                             }}
-                            className="group flex flex-col h-full"
+                            className="group flex flex-col h-full  p-6 transition-all duration-300"
                         >
                             <Card
                                 title={card.title}
