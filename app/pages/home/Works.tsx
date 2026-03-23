@@ -38,12 +38,12 @@ export default function HowItWorks() {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-8">
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="h-[1px] w-8 bg-amber" />
+                            <div className="h-1px w-8 bg-amber" />
                             <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
                                 How it works
                             </span>
                         </div>
-                        <h2 className="font-brand text-4xl font-[900] text-text-main leading-none">
+                        <h2 className="font-brand text-4xl font-black leading-none">
                             From installation<br />
                             <span className="italic font-editorial font-light text-amber-deep">to token — automatically.</span>
                         </h2>

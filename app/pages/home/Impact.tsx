@@ -67,7 +67,7 @@ export default function CommunityImpact() {
                                 Community Impact
                             </span>
                         </div>
-                        <h2 className="font-brand text-4xl text-panel-dark-text leading-none tracking-tight">
+                        <h2 className="font-brand text-4xl text-panel-dark-text leading-none tracking-tight font-black">
                             Energy that gives back<br />
                             <span className="italic font-editorial font-light text-amber-deep">to the community.</span>
                         </h2>

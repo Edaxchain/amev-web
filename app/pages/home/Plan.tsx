@@ -156,7 +156,7 @@ export default function Plan() {
                                 Project Timeline
                             </span>
                         </div>
-                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+                        <h2 className="font-black  font-brand text-4xl">
                             Implementation plan
                             <br />
                             <span className="italic font-editorial font-light">

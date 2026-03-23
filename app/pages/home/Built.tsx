@@ -75,7 +75,7 @@ export default function Built() {
     return (
         <section
             id="built"
-            className="p-10 lg:p-20 flex flex-col gap-12 lg:gap-16"
+            className="py-10 lg:py-20 flex flex-col gap-12 lg:gap-16"
         >
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px] relative">
                 <div className="flex flex-col lg:flex-row justify-between gap-10-0 mb-8">
@@ -86,13 +86,13 @@ export default function Built() {
                         transition={{ duration: 0.8 }}
                     >
                         <div>
-                            <span className="text-amber-deep tracking-widest text-xs uppercase mb-4">
+                            <span className="font-brand text-amber-deep tracking-widest text-[10px] uppercase mb-4">
                                 Partner & Compliance
                             </span>
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+                            <h1 className="font-brand text-4xl font-black ">
                                 Built with trusted
                             </h1>
-                            <p className="text-amber-deep text-3xl sm:text-4xl md:text-6xl mt-6 italic">
+                            <p className="font-brand text-amber-deep text-4xl italic">
                                 Industry Leaders.
                             </p>
                         </div>
