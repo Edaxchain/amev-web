@@ -140,7 +140,7 @@ export default function Plan() {
     return (
         <section
             id="plan"
-            className="bg-amber py-10 lg:py-20 flex flex-col gap-12 lg:gap-16"
+            className="bg-amber py-10 md:py-12 flex flex-col gap-12 lg:gap-16"
         >
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px] relative">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
@@ -169,7 +169,7 @@ export default function Plan() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="max-w-xl font-brand text-[13px] md:text-right md:pt-12 leading-relaxed text-text-sub pt-12 text-right"
+                        className="max-w-xl font-brand text-[13px] md:text-right md:pt-12 leading-relaxed text-text-sub text-right"
                     >
                         Sustainable urban development in the future under the
                         development framework of the Renewable Energy Power

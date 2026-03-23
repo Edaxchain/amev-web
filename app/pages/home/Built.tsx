@@ -75,10 +75,10 @@ export default function Built() {
     return (
         <section
             id="built"
-            className="py-10 lg:py-20 flex flex-col gap-12 lg:gap-16"
+            className="py-10 md:py-12 flex flex-col gap-12 lg:gap-16"
         >
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px] relative">
-                <div className="flex flex-col lg:flex-row justify-between gap-10-0 mb-8">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -92,7 +92,7 @@ export default function Built() {
                             <h1 className="font-brand text-4xl font-black ">
                                 Built with trusted
                             </h1>
-                            <p className="font-brand text-amber-deep text-4xl italic">
+                            <p className="font-editorial text-amber-deep text-4xl italic">
                                 Industry Leaders.
                             </p>
                         </div>
@@ -102,15 +102,15 @@ export default function Built() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="max-w-xl font-brand text-[13px] md:text-right md:pt-12 leading-relaxed text-text-sub pt-12 text-right"
+                        className="max-w-xl font-brand text-[13px] md:text-right md:pt-12 leading-relaxed text-text-sub text-right"
                     >
-                        Developed under Thailand's national renewable energy
-                        framework in partnership with leading engineering and
-                        investment groups.
+                        Developed under Thailand&apos;s national renewable
+                        energy framework in partnership with leading engineering
+                        and investment groups.
                     </motion.p>
                 </div>
                 <motion.div
-                    className="grid grid-cols-1 px-[10vw] lg:px-0 lg:grid-cols-5 gap-4"
+                    className="grid grid-cols-1 px-[10vw] lg:px-0 lg:grid-cols-5 gap-8"
                     variants={containerVars}
                     initial="hidden"
                     whileInView="visible"
@@ -125,7 +125,7 @@ export default function Built() {
                                 stiffness: 300,
                                 damping: 20,
                             }}
-                            className="group flex flex-col h-full  p-6 transition-all duration-300"
+                            className="group flex flex-col h-full transition-all duration-300"
                         >
                             <Card
                                 title={card.title}

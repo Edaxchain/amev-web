@@ -9,6 +9,7 @@ import BlockchainSection from "./Blockchain";
 import Plan from "./Plan";
 import Built from "./Built";
 import Partner from "./Partner";
+import Pilot from "./Pilot";
 
 export default function LandingPage() {
     return (
@@ -23,6 +24,7 @@ export default function LandingPage() {
             <BlockchainSection />
             <Plan />
             <Built />
+            <Pilot />
             <Partner />
         </main>
     );

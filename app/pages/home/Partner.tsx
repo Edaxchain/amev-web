@@ -70,7 +70,7 @@ export default function Partner() {
     return (
         <section
             id="plan"
-            className="bg-amber py-10 lg:py-20 flex flex-col gap-12 lg:gap-16"
+            className="bg-amber py-10 md:py-12 flex flex-col gap-12 lg:gap-16"
         >
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px] w-full relative">
                 <div className="w-full flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
