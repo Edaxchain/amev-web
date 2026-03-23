@@ -113,7 +113,7 @@ export default function CommunityImpact() {
                                 {item.desc}
                             </p>
                             <div className="flex flex-col">
-                                <span className="font-brand text-xl font-[900] text-amber tracking-tighter">
+                                <span className="font-brand text-xl text-amber tracking-tighter">
                                     {item.status}
                                 </span>
                             </div>
