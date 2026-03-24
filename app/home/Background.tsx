@@ -21,7 +21,7 @@ export default function ProjectBackground() {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="flex items-center gap-3 mb-2">
-                            <div className="h-[1px] w-8 bg-amber" />
+                            <div className="h-px w-8 bg-amber" />
                             <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
                                 Project Background
                             </span>
