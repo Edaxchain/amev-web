@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/app/_components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion, animate, useInView, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -139,7 +139,9 @@ export default function Partner() {
                         >
                             Download Project Deck
                         </Button>
-                        <p className="text-xs">ISO Certified · Audited · Government aligned</p>
+                        <p className="text-xs">
+                            ISO Certified · Audited · Government aligned
+                        </p>
                     </div>
                 </div>
             </div>

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Sun, Menu, X } from "lucide-react";
-import { Button } from "@/app/components/ui/button";
-import { ModeToggle } from "@/app/components/ui/modeToggle";
+import { Button } from "@/app/_components/ui/button";
+import { ModeToggle } from "@/app/_components/ui/modeToggle";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);

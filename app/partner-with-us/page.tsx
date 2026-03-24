@@ -1,5 +1,5 @@
-import Built from "@/app/pages/home/Built";
-import { Button } from "@/app/components/ui/button";
+import Built from "@/app/home/Built";
+import { Button } from "@/app/_components/ui/button";
 
 export default function PartnerWithUsPage() {
     return (
