@@ -12,12 +12,12 @@ const ProgressBar = ({ progress }: { progress: string }) => {
                     whileInView={{ width: progress }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="h-full bg-foreground rounded-full"
+                    className="h-full bg-black rounded-full"
                 />
             </div>
 
             {/* Left Circle (Start) */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 bg-foreground rounded-full" />
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 bg-black rounded-full " />
 
             {/* Right Circle (End) */}
             <div
@@ -47,24 +47,22 @@ const Card = ({
     return (
         <div
             className={`p-6 rounded-2xl transition-all duration-500 h-full flex flex-col cursor-pointer group-hover:shadow-2xl ${
-                isInProgress
-                    ? "bg-foreground text-background"
-                    : "bg-amber-light text-foreground"
+                isInProgress ? "bg-black" : "bg-amber-light"
             }`}
         >
             <h3
-                className={`text-2xl font-bold ${isInProgress ? "text-amber" : ""}`}
+                className={`text-2xl font-bold ${isInProgress ? "text-amber" : "text-black"}`}
             >
                 {title}
             </h3>
             <h3
-                className={`text-xl uppercase ${isInProgress ? "text-amber-deep" : ""}`}
+                className={`text-xl uppercase ${isInProgress ? "text-amber-deep" : "text-black"}`}
             >
                 {subtitle}
             </h3>
 
             <p
-                className={`mt-4 flex-1 ${isInProgress ? "text-panel-dark-muted" : "text-text-sub"}`}
+                className={`mt-4 flex-1 ${isInProgress ? "text-panel-dark-muted" : "text-black"}`}
             >
                 {description}
             </p>
@@ -72,10 +70,10 @@ const Card = ({
             {/* Status Badge */}
             <div
                 className={`p-2 rounded-md mt-4 inline-block self-start ${
-                    isInProgress ? "bg-amber text-white" : "bg-amber-deep"
+                    isInProgress ? "bg-amber" : "bg-amber-deep"
                 }`}
             >
-                <span className="text-sm font-medium">{status}</span>
+                <span className="text-sm font-medium text-black">{status}</span>
             </div>
         </div>
     );
@@ -152,14 +150,14 @@ export default function Plan() {
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-px w-8 bg-amber-deep" />
-                            <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
+                            <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em] ">
                                 Project Timeline
                             </span>
                         </div>
-                        <h2 className="font-black  font-brand text-4xl">
+                        <h2 className="font-black  font-brand text-4xl text-black">
                             Implementation plan
                             <br />
-                            <span className="italic font-editorial font-light">
+                            <span className="italic font-editorial font-light text-black">
                                 2021-2029
                             </span>
                         </h2>
@@ -169,7 +167,7 @@ export default function Plan() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="max-w-xl font-brand text-[13px] md:text-right md:pt-12 leading-relaxed text-text-sub text-right"
+                        className="max-w-xl font-brand text-[13px] md:text-right md:pt-12 leading-relaxed text-text-sub text-right "
                     >
                         Sustainable urban development in the future under the
                         development framework of the Renewable Energy Power
