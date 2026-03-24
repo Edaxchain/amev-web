@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import Works from "./Works";
 import Tabs from "./Tabs";
 import Calculate from "./Calculate";
+import Plan from "./Plan";
 import YourSite from "./YourSite";
 
 export const metadata: Metadata = {
@@ -17,8 +18,9 @@ export default function SolutionsPage() {
             <Hero />
             <Tabs />
             <Works />
-            <Calculate/>
-            <YourSite/>
+            <Plan />
+            <Calculate />
+            <YourSite />
         </main>
     );
 }
