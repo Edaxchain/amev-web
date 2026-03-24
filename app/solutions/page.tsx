@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Hero from "./Hero";
 import Works from "./Works";
+import Tabs from "./Tabs";
 
 export const metadata: Metadata = {
     title: "Energy Solutions | AMEV",
@@ -12,6 +13,7 @@ export default function SolutionsPage() {
     return (
         <main className="flex min-h-screen flex-col bg-background">
             <Hero />
+            <Tabs />
             <Works />
         </main>
     );

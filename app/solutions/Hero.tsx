@@ -89,21 +89,19 @@ export default function Hero() {
                         variants={itemVars}
                         className="flex flex-wrap justify-center lg:justify-start gap-2 mb-4"
                     >
-                        {[
-                            "Solar Installation",
-                            "Blockchain Tokens",
-                            "Live Exchange",
-                        ].map((text) => (
-                            <div
-                                key={text}
-                                className="flex items-center gap-2 bg-amber-deep/10 border border-amber-border/60 px-3 py-1.5 rounded-full shadow-sm"
-                            >
-                                <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
-                                <span className="font-brand text-[10px] tracking-wider text-amber">
-                                    {text}
-                                </span>
-                            </div>
-                        ))}
+                        {["Solar Rooftop", "Solar Farm", "Solar Floating"].map(
+                            (text) => (
+                                <div
+                                    key={text}
+                                    className="flex items-center gap-2 bg-amber-deep/10 border border-amber-border/60 px-3 py-1.5 rounded-full shadow-sm"
+                                >
+                                    <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+                                    <span className="font-brand text-[10px] tracking-wider text-amber">
+                                        {text}
+                                    </span>
+                                </div>
+                            ),
+                        )}
                     </motion.div>
                 </div>
             </motion.div>
