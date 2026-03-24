@@ -61,7 +61,7 @@ export default function Navbar() {
                         asChild
                         className="font-brand text-[11px] md:text-[12px] font-[700] text-button-primary-text bg-button-primary hover:bg-button-primary-hover hover:shadow-[0_0_0_3px_rgba(245,166,35,0.25),0_4px_20px_rgba(245,166,35,0.3)] hover:-translate-y-[0.5px] active:scale-[0.98] h-auto py-[6px] px-[10px] md:px-[16px] rounded-[8px] transition-all"
                     >
-                        <Link href="/">Partner with us</Link>
+                        <Link href="/solutions#quote">Partner with us</Link>
                     </Button>
 
                     {/* Hamburger Button */}

@@ -67,31 +67,30 @@ export default function Tabs() {
 
             <div className="mx-auto px-6 md:px-[52px]">
                 {/* Header */}
-                <div>
-                    <div className="max-w-3xl mb-12">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="h-px w-8 bg-amber" />
-                            <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
-                                Tailored Solutions
-                            </span>
-                        </div>
-                        <h2 className="font-brand text-4xl font-black text-text-main leading-tight mb-4">
-                            Choose the installation type <br />
-                            <span className="italic font-editorial font-light text-amber-deep">
-                                that fits your site perfectly.
-                            </span>
-                        </h2>
+                <div className="max-w-3xl mb-12">
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className="h-px w-8 bg-amber" />
+                        <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
+                            Tailored Solutions
+                        </span>
                     </div>
+                    <h2 className="font-brand text-4xl font-black text-text-main leading-tight mb-4">
+                        Choose the installation type <br />
+                        <span className="italic font-editorial font-light text-amber-deep">
+                            that fits your site perfectly.
+                        </span>
+                    </h2>
+                </div>
 
-                    {/* Tabs Navigation */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-12 p-1.5 bg-bg-secondary/50 rounded-2xl border border-divider/50">
-                        {tabs.map((tab) => {
-                            const isActive = activeTab.id === tab.id;
-                            return (
-                                <button
-                                    key={tab.id}
-                                    onClick={() => setActiveTab(tab)}
-                                    className={`
+                {/* Tabs Navigation */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-12 p-1.5 bg-bg-secondary/50 rounded-2xl border border-divider/50">
+                    {tabs.map((tab) => {
+                        const isActive = activeTab.id === tab.id;
+                        return (
+                            <button
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab)}
+                                className={`
                                     relative flex items-center gap-3 px-6 py-4 rounded-xl font-brand text-sm font-bold transition-all duration-300
                                     ${
                                         isActive
@@ -99,76 +98,75 @@ export default function Tabs() {
                                             : "text-text-sub hover:text-text-main hover:bg-bg-tertiary/50"
                                     }
                                 `}
-                                >
-                                    {isActive && (
-                                        <motion.div
-                                            layoutId="activeTab"
-                                            className="absolute inset-0 bg-amber rounded-xl shadow-lg shadow-amber/20"
-                                            transition={{
-                                                type: "spring",
-                                                bounce: 0.25,
-                                                duration: 0.5,
-                                            }}
-                                        />
-                                    )}
-                                    <span className="relative z-10 flex items-center gap-2">
-                                        <span
-                                            className={
-                                                isActive
-                                                    ? "text-panel-dark"
-                                                    : "text-amber"
-                                            }
-                                        >
-                                            {tab.icon}
-                                        </span>
-                                        {tab.label}
-                                    </span>
-                                </button>
-                            );
-                        })}
-                    </div>
-
-                    {/* Content Area */}
-                    <div className="relative">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeTab.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
                             >
-                                {/* Left: Main Info */}
-                                <div className="flex flex-col justify-center">
-                                    <h3 className="font-brand text-2xl font-black text-text-main mb-4">
-                                        {activeTab.title}
-                                    </h3>
-                                    <p className="font-brand text-[15px] text-text-sub leading-relaxed mb-8 max-w-2xl">
-                                        {activeTab.description}
-                                    </p>
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="activeTab"
+                                        className="absolute inset-0 bg-amber rounded-xl shadow-lg shadow-amber/20"
+                                        transition={{
+                                            type: "spring",
+                                            bounce: 0.25,
+                                            duration: 0.5,
+                                        }}
+                                    />
+                                )}
+                                <span className="relative z-10 flex items-center gap-2">
+                                    <span
+                                        className={
+                                            isActive
+                                                ? "text-panel-dark"
+                                                : "text-amber"
+                                        }
+                                    >
+                                        {tab.icon}
+                                    </span>
+                                    {tab.label}
+                                </span>
+                            </button>
+                        );
+                    })}
+                </div>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-4 gap-y-4 gap-x-8 mb-10">
-                                        {activeTab.benefits.map((benefit) => (
-                                            <div
-                                                key={benefit}
-                                                className="flex items-center gap-3"
-                                            >
-                                                <div className="bg-amber-pale/50 p-1 rounded-full">
-                                                    <CheckCircle2
-                                                        size={16}
-                                                        className="text-amber-deep"
-                                                    />
-                                                </div>
-                                                <span className="font-brand text-[14px] font-medium text-text-main/80">
-                                                    {benefit}
-                                                </span>
+                {/* Content Area */}
+                <div className="relative">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeTab.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                        >
+                            {/* Left: Main Info */}
+                            <div className="flex flex-col justify-center">
+                                <h3 className="font-brand text-2xl font-black text-text-main mb-4">
+                                    {activeTab.title}
+                                </h3>
+                                <p className="font-brand text-[15px] text-text-sub leading-relaxed mb-8 max-w-2xl">
+                                    {activeTab.description}
+                                </p>
+
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-y-4 gap-x-8 mb-10">
+                                    {activeTab.benefits.map((benefit) => (
+                                        <div
+                                            key={benefit}
+                                            className="flex items-center gap-3"
+                                        >
+                                            <div className="bg-amber-pale/50 p-1 rounded-full">
+                                                <CheckCircle2
+                                                    size={16}
+                                                    className="text-amber-deep"
+                                                />
                                             </div>
-                                        ))}
-                                    </div>
+                                            <span className="font-brand text-[14px] font-medium text-text-main/80">
+                                                {benefit}
+                                            </span>
+                                        </div>
+                                    ))}
                                 </div>
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
             </div>
         </section>
