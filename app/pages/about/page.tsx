@@ -1,7 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { SunIcon, Target, Rocket, Users, ShieldCheck } from "lucide-react";
+import { SunIcon, Target, Rocket, Users, ShieldCheck, Leaf, Zap, BookCheck, Scale, Building2, ArrowUpRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import { Button } from '@/app/components/ui/button';
+import Link from 'next/link';
 
 
 const containerVars = {
@@ -39,7 +41,7 @@ const HeaderAbout = () => (
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr,auto] lg:gap-x-12 items-start">
             <motion.div variants={itemVars} className="lg:col-start-1">
-                <h1 className="text-4xl lg:text-5xl font-black leading-[0.85] tracking-tighter uppercase italic">
+                <h1 className="text-4xl lg:text-5xl font-brand leading-[0.85] tracking-tighter uppercase italic">
                     About
                     <span className="block text-4xl lg:text-5xl font-editorial text-amber-deep normal-case mt-2">AMEV</span>
                 </h1>
@@ -77,8 +79,8 @@ const HeaderAbout = () => (
 const tabs = [
     { id: "mission", title: "Mission & Vision", subtitle: "Future Energy Goals", icon: <Target className="w-5 h-5" /> },
     { id: "journey", title: "Our Journey", subtitle: "Since 2019 Milestones", icon: <Rocket className="w-5 h-5" /> },
-    { id: "team", title: "Values & Team", subtitle: "AMEV Core Identity", icon: <Users className="w-5 h-5" /> },
-    { id: "network", title: "Trust & Network", subtitle: "Global Partnerships", icon: <ShieldCheck className="w-5 h-5" /> },
+    { id: "identity", title: "Values & Team", subtitle: "AMEV Core Identity", icon: <Users className="w-5 h-5" /> },
+    { id: "trust", title: "Trust & Network", subtitle: "Global Partnerships", icon: <ShieldCheck className="w-5 h-5" /> },
 ];
 
 const TabsAbout = () => {
@@ -87,6 +89,7 @@ const TabsAbout = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
 
     const scrollToSection = (id: string) => {
+        setActiveSection(id);
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({
@@ -109,18 +112,19 @@ const TabsAbout = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+                    if (entry.isIntersecting) {
                         setActiveSection(entry.target.id);
                     }
                 });
             },
             {
-                rootMargin: '-150px 0px -50% 0px',
-                threshold: [0.2, 0.5]
+                rootMargin: '-10% 0px -80% 0px',
+                threshold: 0.1
             }
         );
 
@@ -131,6 +135,21 @@ const TabsAbout = () => {
 
         return () => observer.disconnect();
     }, []);
+
+    useEffect(() => {
+        const activeTab = document.getElementById(`tab-${activeSection}`);
+
+        if (activeTab) {
+            requestAnimationFrame(() => {
+                activeTab.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'center'
+                });
+            });
+        }
+    }, [activeSection]);
+
     return (
         <nav
             className={`sticky top-[62px] z-40 w-full bg-bg-alt backdrop-blur-lg border-b border-border transition-transform duration-500 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"
@@ -143,6 +162,7 @@ const TabsAbout = () => {
                         return (
                             <button
                                 key={tab.id}
+                                id={`tab-${tab.id}`}
                                 onClick={() => scrollToSection(tab.id)}
                                 className={`group flex-shrink-0 min-w-[50%] lg:min-w-0 flex flex-col items-center lg:items-start p-6 lg:p-8 transition-all text-center lg:text-left border-r border-border lg:border-r-0 ${isActive ? "bg-amber-deep/[0.04]" : "hover:bg-amber-deep/[0.02]"
                                     }`}
@@ -176,7 +196,7 @@ const TabsAbout = () => {
 
 const MissonVision = () => {
     return (
-        <section id="mission" className="bg-background text-text-main py-14 lg:py-16 px-6 lg:px-20 border-b border-border">
+        <section id='mission' className="bg-background text-text-main py-14 lg:py-16 px-6 lg:px-20 border-b border-border">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start">
                 <div className="flex flex-col gap-20 lg:gap-24 w-full">
                     <motion.div
@@ -185,8 +205,14 @@ const MissonVision = () => {
                         viewport={{ once: true }}
                         className="flex flex-col gap-6"
                     >
+
                         <div className="flex items-center gap-3">
-                            <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-amber-deep font-bold italic">
+                            <motion.div
+                                initial={{ width: 0 }}
+                                whileInView={{ width: 32 }}
+                                className="h-[1px] bg-amber-deep"
+                            />
+                            <span className="font-mono text-[12px] tracking-[0.4em] uppercase text-amber-deep font-bold italic">
                                 Our Mission
                             </span>
                             <div className="flex-1 h-[1px] bg-divider" />
@@ -210,7 +236,12 @@ const MissonVision = () => {
                         className="flex flex-col gap-6"
                     >
                         <div className="flex items-center gap-3">
-                            <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-amber-deep font-bold italic">
+                            <motion.div
+                                initial={{ width: 0 }}
+                                whileInView={{ width: 32 }}
+                                className="h-[1px] bg-amber-deep"
+                            />
+                            <span className="font-mono text-[12px] tracking-[0.4em] uppercase text-amber-deep font-bold italic">
                                 Our Vision
                             </span>
                             <div className="flex-1 h-[1px] bg-divider" />
@@ -268,7 +299,7 @@ const DataRow = ({ label, sub, value, unit, color = "text-text-main" }: any) => 
 
 const CompanyBackground = () => {
     return (
-        <section id="journey" className="scroll-mt-40 bg-bg-sub py-10 lg:py-12 px-6 lg:px-20 border-b border-border overflow-hidden">
+        <section id='journey' className="scroll-mt-40 bg-bg-sub py-12 lg:py-16 px-6 lg:px-20 border-b border-border overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.5fr] gap-12 lg:gap-24 items-start">
 
                 <motion.aside
@@ -279,7 +310,11 @@ const CompanyBackground = () => {
                     className="flex flex-col gap-0" >
                     <div className="py-6 flex flex-col gap-1">
                         <div className="flex items-center gap-2 mb-1">
-                            <div className="w-4 h-[1px] bg-amber-deep" />
+                            <motion.div
+                                initial={{ width: 0 }}
+                                whileInView={{ width: 32 }}
+                                className="h-[1px] bg-amber-deep"
+                            />
                             <span className="font-mono text-[12px] tracking-[0.3em] uppercase text-amber-deep font-bold italic">
                                 Background
                             </span>
@@ -349,6 +384,401 @@ const FactItem = ({ label, value, variants }: any) => (
     </motion.div>
 );
 
+const Timeline = () => {
+    const timelineData = [
+        {
+            year: "2018 - 2020",
+            status: "Complete",
+            title: "Foundation & Vision",
+            items: [
+                "Concept Generation & Core Team Assemble",
+                "Strategic Energy Master Plan & Site Survey",
+                "Infrastructure Site Acquisition & Procurement"
+            ]
+        },
+        {
+            year: "2021 - 2022",
+            status: "Complete",
+            title: "Market Entry & Pilot RWA",
+            items: [
+                "AME Tokenization & DeFi Listing (PancakeSwap)",
+                "600kW Solar Rooftop Launch (Vietnam)",
+                "REST Lending Platform & CEX Listing (Bankcex/Nexdax)"
+            ]
+        },
+        {
+            year: "2023 - 2027",
+            status: "Active",
+            title: "Ecosystem & Digital Economy",
+            items: [
+                "Launch EDAX Energy Exchange & Smart POS",
+                "Super Dapp Development & Multi-Chain Protocol",
+                "Integration of Smart Grid Monitoring Systems"
+            ]
+        },
+        {
+            year: "2028 - 2030",
+            status: "Future",
+            title: "ASEAN Energy Connectivity",
+            items: [
+                "Build 140MW Solar Power Plant (QDP Stage II)",
+                "Full Scale ASEAN Grid Connectivity",
+                "Launch Full Operational AI-Smart Contracts"
+            ]
+        },
+    ];
+
+    return (
+        <section id='journey' className="scroll-mt-40 bg-panel-dark py-8 lg:py-16 px-6 lg:px-20 overflow-hidden">
+            <div className="flex flex-col gap-6 mb-20">
+                <div className="flex items-center gap-4">
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 32 }}
+                        className="h-[1px] bg-amber-deep"
+                    />
+                    <span className="font-mono text-[12px] tracking-[0.4em] uppercase text-amber-deep font-bold italic">
+                        Implementation Plan
+                    </span>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
+                    <h2 className="text-5xl lg:text-6xl font-brand italic tracking-tighter text-panel-dark-text leading-[0.85]">
+                        Project <br /> <span className="text-amber-deep font-editorial normal-case tracking-normal">Timeline.</span>
+                    </h2>
+                    <p className="text-panel-dark-text/30 font-light text-lg italic leading-tight lg:text-right max-w-sm lg:ml-auto">
+                        A phased approach from conceptualization to full ASEAN grid connectivity.
+                    </p>
+                </div>
+            </div>
+            <div className="relative mt-6 mb-6">
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-zinc-800 hidden lg:block">
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "66%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 2, delay: 0.5 }}
+                        className="h-full bg-panel-dark-text shadow-[0_0_15px_var(--panel-dark-text)]"
+                    />
+
+                    <div className="w-full h-full grid grid-cols-4 z-20">
+                        {timelineData.map((data, idx) => (
+                            <div key={idx} className="relative h-full flex justify-center">
+                                <motion.div
+                                    initial={{ scale: 0, opacity: 0 }}
+                                    whileInView={{ scale: data.status ? 1.25 : 1, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.5 + (idx * 0.4), duration: 0.5 }}
+                                    className={`absolute -top-2 w-4 h-4 rounded-full border-2 transition-all duration-500 
+                                        ${data.status === "Complete"
+                                            ? "bg-green-500 border-green-500 shadow-[0_0_15px_rgba(34,197,94,0.4)]"
+                                            : data.status === "Active"
+                                                ? "bg-amber border-amber shadow-[0_0_15px_rgba(212,175,55,0.5)]"
+                                                : "bg-zinc-900 border-zinc-700"
+                                        }`}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+
+
+                <motion.div
+                    variants={containerVars}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative z-10 pt-16"
+                >
+                    {timelineData.map((data, index) => (
+                        <TimelineCard key={index} {...data} variants={itemVars} />
+                    ))}
+                </motion.div>
+            </div>
+        </section>
+    );
+};
+
+const TimelineCard = ({ year, title, items, status, variants }: any) => (
+    <motion.div
+        variants={variants}
+        className={`p-6 rounded-2xl border transition-all duration-500 group flex flex-col h-full 
+            ${status === "Complete"
+                ? "border-green-500"
+                : status === "Active"
+                    ? "border-amber-deep"
+                    : "border-zinc-700"
+            } 
+            `}
+    >
+
+        <div className="group flex flex-col gap-1 mb-6">
+            <span className={`font-mono text-xl font-bold tracking-tighter text-panel-dark-text lg:text-panel-dark-muted group-hover:text-panel-dark-text transition-colors`}>
+                {year}
+            </span>
+            <h3 className={`text-md font-bold uppercase tracking-tight mb-4 leading-tight text-panel-dark-text lg:text-panel-dark-muted group-hover:text-panel-dark-text transition-colors`}>
+                {title}
+            </h3>
+        </div>
+        <ul className="flex flex-col gap-3 flex-grow mb-8">
+            {items.map((item: string, idx: number) => (
+                <li key={idx} className="flex gap-2 text-[11px] leading-relaxed text-panel-dark-muted group-hover:text-panel-dark-text transition-colors">
+                    <span className="text-panel-dark-text lg:text-panel-dark-muted group-hover:text-panel-dark-text transition-colors">•</span>
+                    {item}
+                </li>
+            ))}
+        </ul>
+
+        <div className="mt-auto pt-4">
+            <span className={`text-[8px] font-mono uppercase tracking-[0.2em] px-2 py-1 rounded border 
+            ${status === "Complete" ? "border-green-500/20 text-green-500/80 bg-green-500/5" :
+                    status === "Active" ? "border-amber-deep/40 text-amber-deep bg-amber-deep/5" :
+                        "border-zinc-800 text-zinc-600"
+                }`}>
+                {status}
+            </span>
+        </div>
+    </motion.div>
+);
+
+const CoreValues = () => {
+    const values = [
+        {
+            id: "01",
+            title: "Sustainability First",
+            desc: "Every decision is measured against its environmental impact. We build infrastructure that generates clean energy for generations—not just for the next quarter.",
+            icon: <Leaf />
+        },
+        {
+            id: "02",
+            title: "Radical Transparency",
+            desc: "Every kilowatt-hour, every token, and every transaction is recorded on-chain and publicly verifiable. We believe energy markets should be open and auditable.",
+            icon: <ShieldCheck />
+        },
+        {
+            id: "03",
+            title: "Community Ownership",
+            desc: "Energy infrastructure should benefit the communities it serves. Our model puts income directly in the hands of local residents, not intermediaries.",
+            icon: <Users />
+        },
+        {
+            id: "04",
+            title: "Technology as Enabler",
+            desc: "Blockchain and IoT are tools, not goals. We deploy technology precisely where it removes friction, increases trust, and creates real value for physical grids.",
+            icon: <Zap />
+        }
+    ];
+
+    return (
+        <section id='identity' className="scroll-mt-40 bg-background py-24 lg:py-16 px-6 lg:px-20">
+            <div className="flex flex-col gap-6 mb-16">
+                <div className="flex items-center gap-4">
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 32 }}
+                        className="h-[1px] bg-amber-deep"
+                    />
+                    <span className="font-mono text-[12px] tracking-[0.4em] uppercase text-amber-deep font-bold italic">
+                        Core Values
+                    </span>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
+                    <h2 className="text-5xl lg:text-6xl font-brand italic tracking-tighter text-text-main leading-none">
+                        What we <br /> <span className="text-amber-deep font-serif normal-case tracking-normal text-5xl lg:text-6xl">stand for.</span>
+                    </h2>
+                    <p className="text-text-sub font-light text-lg max-w-sm lg:ml-auto lg:text-right italic leading-tight">
+                        The principles that guide every installation, every token, and every partnership we build.
+                    </p>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                {values.map((v, idx) => (
+                    <motion.div
+                        key={v.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="group relative p-8 lg:p-12 rounded-3xl bg-amber-deep/10 border border-amber-border hover:border-amber/70 transition-all duration-500"
+                    >
+                        <div className="flex flex-col gap-6">
+                            <div className="flex items-center justify-between">
+                                <div className="w-12 h-12 rounded-xl bg-amber-tint flex items-center justify-center text-2xl lg:grayscale group-hover:grayscale-0 transition-all">
+                                    {v.icon}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold text-text-main mb-4 tracking-tight">
+                                    {v.title}
+                                </h3>
+                                <p className="text-text-sub text-sm lg:text-base leading-relaxed group-hover:text-text-main transition-colors">
+                                    {v.desc}
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+const Trust = () => {
+    const partners = [
+        {
+            name: "Ample Rich Investors Corp.",
+            location: "Thailand • Est. 2019",
+            role: "Lead Developer",
+            desc: "Lead development company and primary investor behind the ISC Project. Responsible for overall project structure and investment framework.",
+            tags: "Project Development • Investment • Regulatory",
+            icon: <Building2 />
+        },
+        {
+            name: "BS Industry Service Co., Ltd.",
+            location: "Thailand",
+            role: "Grid Partner",
+            desc: "Engineering and grid connectivity partner. Responsible for power system design, transmission infrastructure, and IoT smart meter integration.",
+            tags: "Grid Engineering • IoT Oracle • Smart Meter",
+            icon: <Building2 />
+        },
+        {
+            name: "Solana Foundation",
+            location: "Blockchain Protocol",
+            role: "Integrated",
+            desc: "Infrastructure built on the Solana SPL token standard—selected for its speed, low transaction cost, and energy efficiency.",
+            tags: "SPL Token • Smart Contracts • On-chain Settlement",
+            icon: <Building2 />
+        }
+    ];
+
+    const certs = [
+        { title: "ISO 9001", subtitle: "Quality Management System", icon: <BookCheck /> },
+        { title: "IEC 61215", subtitle: "Solar Panel Qualification", icon: <SunIcon /> },
+        { title: "REC Certified", subtitle: "Renewable Energy Certificate", icon: <Leaf /> },
+        { title: "SEC Compliant", subtitle: "Regulatory Framework", icon: <Scale /> }
+    ];
+
+    return (
+        <section id="trust" className="scroll-mt-40 bg-bg-sub py-12 lg:py-16 px-6 lg:px-20">
+            <div className="flex flex-col gap-6 mb-16">
+                <div className="flex items-center gap-4">
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 32 }}
+                        className="h-[1px] bg-amber-deep"
+                    />
+                    <span className="font-mono text-[13px] tracking-[0.4em] uppercase text-amber-deep font-bold italic">
+                        Partners & Certifications
+                    </span>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
+                    <h2 className="text-5xl lg:text-6xl font-brand italic tracking-tighter text-text-main leading-none">
+                        Built with <br /> <span className="text-amber-deep font-serif normal-case tracking-normal text-5xl lg:text-6xl">trusted leaders.</span>
+                    </h2>
+                    <p className="text-text-sub font-light text-lg max-w-sm lg:ml-auto lg:text-right italic leading-tight">
+                        Developed under Thailand's national renewable energy framework with leading engineering and investment organisations.
+                    </p>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                {partners.map((p, idx) => (
+                    <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                        className={`group p-8 rounded-[2rem] border border-amber-border transition-all duration-300 flex flex-col h-full hover:border-amber`}
+                    >
+                        <div className="flex justify-between items-start mb-10">
+                            <div className="w-12 h-12 bg-amber-pale/10 border border-amber-border rounded-xl flex items-center justify-center text-xl group-hover:border-amber">
+                                {p.icon}
+                            </div>
+                            <span className={`text-[11px] font-brand px-3 py-1 rounded-full border border-amber-border group-hover:border-amber`}>
+                                {p.role}
+                            </span>
+                        </div>
+                        <div className="flex-grow">
+                            <h3 className="lg:text-text-sub text-xl font-bold mb-1 group-hover:text-text-main transition-colors duration-300">{p.name}</h3>
+                            <p className="text-text-main lg:text-text-sub text-xs font-brand mb-6 group-hover:text-text-main transition-colors duration-300">{p.location}</p>
+                            <p className="text-text-main lg:text-text-sub text-sm leading-relaxed mb-8 group-hover:text-text-main transition-colors duration-300">{p.desc}</p>
+                        </div>
+                        <p className="text-amber-deep/80 text-[10px] font-mono tracking-tight uppercase pt-6">
+                            {p.tags}
+                        </p>
+                    </motion.div>
+                ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {certs.map((c, idx) => (
+                    <div key={idx} className="flex items-center gap-4 p-5 rounded-2xl bg-amber-pale/10 border border-amber-border hover:border-amber transition-colors">
+                        <div className="text-2xl text-amber">{c.icon}</div>
+                        <div>
+                            <h4 className="text-text-main text-sm font-bold uppercase tracking-wider">{c.title}</h4>
+                            <p className="text-text-sub text-[10px]">{c.subtitle}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+const AboutCTA = () => {
+    return (
+        <section className="scroll-mt-40 bg-amber/80 pt-10 pb-50 lg:pt-16 lg:pb-24 px-6 lg:px-20">
+            <div className="flex flex-col gap-6 mb-6">
+                <div className="flex items-center gap-4">
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 32 }}
+                        className="h-[1px] bg-button-primary-text"
+                    />
+                    <span className="font-brand text-[13px] tracking-[0.4em] uppercase text-button-primary-text font-bold italic">
+                        Partner with us
+                    </span>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-12 items-start">
+                <div className="lg:col-span-8 flex flex-col justify-start">
+                    <h2 className="text-4xl lg:text-5xl font-brand italic tracking-tighter text-button-primary-text leading-[0.8]">
+                        Be part of <br />
+                        <span className="font-serif normal-case text-button-primary-text tracking-tight opacity-95 block my-4 text-4xl lg:text-5xl">
+                            the mission.
+                        </span>
+                    </h2>
+
+                    <p className="text-button-primary-text text-lg lg:text-xl font-brand leading-tight max-w-lg italic">
+                        We are actively seeking government partners, institutional investors, and energy companies to join the ISC Project and help build ASEAN's clean energy future.
+                    </p>
+                </div>
+
+
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-start gap-5 lg:mt-2">
+                    <Button variant={"default"} className="group bg-button-primary text-button-primary-text w-full lg:w-[320px] py-6 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all hover:bg-button-primary-hover active:scale-95 shadow-2xl shadow-black/20">
+                        <Link href="/">Partner With Us </Link>
+                        <ArrowUpRight className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </Button>
+
+                    <Button variant={"default"} className="bg-foreground/20 hover:bg-foreground/30 text-button-primary-text w-full lg:w-[320px] py-6 rounded-2xl font-bold transition-all backdrop-blur-md border border-black/5">
+                        Download Project Deck
+                    </Button>
+
+                    <p className="text-[10px] font-mono text-button-primary-text uppercase tracking-[0.2em] mt-4 font-bold">
+                        ISO Certified • Audited • Government Aligned
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    );
+};
+
+
 export default function AboutPage() {
     return (
         <main className="bg-background min-h-screen text-text-main">
@@ -356,6 +786,11 @@ export default function AboutPage() {
             <TabsAbout />
             <MissonVision />
             <CompanyBackground />
+            <Timeline />
+            <CoreValues />
+            <Trust />
+            <AboutCTA />
+
 
         </main>
     );
