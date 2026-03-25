@@ -14,7 +14,7 @@ export default function Navbar() {
         { title: 'Technology', href: '/' },
         { title: 'Ecosystem', href: '/ecosystem' },
         { title: 'Tokenomic', href: '/' },
-        { title: 'Contact', href: '/' }
+        { title: 'Contact', href: '/contact' }
     ];
     return (
         <>
