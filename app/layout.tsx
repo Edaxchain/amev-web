@@ -1,6 +1,6 @@
-import Navbar from "@/app/components/layout/Navbar";
-import Footer from "@/app/components/layout/Footer";
-import { ThemeProvider } from "@/app/contexts/ThemeProvider";
+import Navbar from "@/app/_components/layout/Navbar";
+import Footer from "@/app/_components/layout/Footer";
+import { ThemeProvider } from "@/app/_contexts/ThemeProvider";
 //import { WalletContextProvider } from "@/app/contexts/WalletContextProvider";
 //import { NextIntlClientProvider } from "next-intl";
 //import { getMessages } from "next-intl/server";

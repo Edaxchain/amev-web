@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/app/_components/ui/button";
 
 export default function ProjectBackground() {
     return (

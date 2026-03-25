@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { ShieldCheck, Cpu, Coins, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/app/_components/ui/button";
 
 export default function Blockchain() {
     const features = [
