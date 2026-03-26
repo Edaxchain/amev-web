@@ -1,18 +1,8 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/app/_components/ui/button";
-import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
 export default function Hero() {
-    const tokenStats = [
-        { label: "Minted today", value: "8,420" },
-        { label: "Your balance", value: "14,280", up: true },
-        { label: "Total supply", value: "2.4M" },
-        { label: "Wallets", value: "18,400" },
-    ];
-
     const containerVars = {
         hidden: { opacity: 0 },
         visible: {

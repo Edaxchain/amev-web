@@ -110,7 +110,7 @@ import { CheckCircle2 } from "lucide-react";
 export default function Plan() {
     return (
         <section className="py-24 bg-background overflow-hidden">
-            <div className="mx-auto px-6 md:px-[52px]">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-[52px]">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                     <div>

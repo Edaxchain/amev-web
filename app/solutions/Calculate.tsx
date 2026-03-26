@@ -55,7 +55,7 @@ export default function Calculate() {
 
     return (
         <section id="calculate" className="bg-bg-alt py-10 md:py-12">
-            <div className="mx-auto px-6 md:px-[52px]">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-[52px]">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
                     <div className="max-w-2xl">
@@ -223,7 +223,7 @@ export default function Calculate() {
                                 <div className="flex items-center gap-2 text-green-400 font-brand text-sm font-bold mb-10">
                                     <ArrowUpRight size={16} />
                                     <span className="text-white">
-                                        Estimated yearly: $ 
+                                        Estimated yearly: $
                                         {results.yearly.toLocaleString(
                                             undefined,
                                             {
