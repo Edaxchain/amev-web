@@ -51,23 +51,12 @@ export default function Hero() {
                     {/* Pills */}
                     <motion.div
                         variants={itemVars}
-                        className="flex flex-wrap justify-center lg:justify-start gap-2 mb-4"
+                        className="flex items-center gap-3 mb-6"
                     >
-                        {[
-                            "Solar Installation",
-                            "Blockchain Tokens",
-                            "Live Exchange",
-                        ].map((text) => (
-                            <div
-                                key={text}
-                                className="flex items-center gap-2 bg-amber-deep/10 border border-amber-border/60 px-3 py-1.5 rounded-full shadow-sm"
-                            >
-                                <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
-                                <span className="font-brand text-[10px] tracking-wider text-amber">
-                                    {text}
-                                </span>
-                            </div>
-                        ))}
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+                        <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
+                            Solar Installation Solutions
+                        </span>
                     </motion.div>
 
                     {/* Headline */}
@@ -75,11 +64,11 @@ export default function Hero() {
                         variants={itemVars}
                         className="font-brand text-4xl md:text-6xl font-black text-panel-dark-text leading-[0.95] tracking-tighter mb-6"
                     >
-                        Powering <span className="text-amber">ASEAN's</span>
+                        Every site <br />
+                        has a <span className="text-amber">solar</span>
                         <br />
-                        clean energy <br />
                         <span className="italic font-editorial font-light text-panel-dark-text">
-                            future.
+                            solution.
                         </span>
                     </motion.h1>
 
@@ -87,41 +76,38 @@ export default function Hero() {
                         variants={itemVars}
                         className="font-brand text-lg text-panel-dark-muted leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0"
                     >
-                        AMEV is developing{" "}
+                        Three installation types designed for every location.
+                        Rooftops, open land, or water bodies — each generates{" "}
                         <span className="text-panel-dark-text">
-                            368 megawatts of renewable energy infrastructure
+                            SOLR tokens automatically
                         </span>{" "}
-                        across Thailand and Southeast Asia — combining solar
-                        power generation with blockchain technology.
+                        from day one.
                     </motion.p>
 
                     {/* Buttons */}
                     <motion.div
                         variants={itemVars}
-                        className="flex flex-wrap justify-center lg:justify-start gap-4 w-full"
+                        className="flex flex-wrap justify-center lg:justify-start gap-2 mb-4"
                     >
-                        <Button
-                            asChild
-                            className="font-brand text-[13px] font-bold bg-button-primary text-button-primary-text hover:bg-button-primary-hover rounded-[6px] h-[52px] px-8 shadow-lg shadow-amber/10 transition-all hover:-translate-y-1"
-                        >
-                            <Link href="#" className="flex items-center gap-2">
-                                Get a Free Quote{" "}
-                                <ArrowRight size={18} strokeWidth={3} />
-                            </Link>
-                        </Button>
-                        <Button
-                            asChild
-                            variant="outline"
-                            className="font-brand text-[13px] bg-panel-dark font-medium border-panel-dark-border/60 text-panel-dark-muted hover:text-panel-dark-text hover:border-panel-dark-border rounded-[9px] h-[52px] px-8 hover:bg-bg-raised transition-all hover:-translate-y-1"
-                        >
-                            <Link href="#">Explore solutions</Link>
-                        </Button>
+                        {["Solar Rooftop", "Solar Farm", "Solar Floating"].map(
+                            (text) => (
+                                <div
+                                    key={text}
+                                    className="flex items-center gap-2 bg-amber-deep/10 border border-amber-border/60 px-3 py-1.5 rounded-full shadow-sm"
+                                >
+                                    <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+                                    <span className="font-brand text-[10px] tracking-wider text-amber">
+                                        {text}
+                                    </span>
+                                </div>
+                            ),
+                        )}
                     </motion.div>
                 </div>
             </motion.div>
 
             {/* Right Content */}
-            <div className="flex-1 w-full flex flex-col items-center justify-center lg:justify-start h-full p-4 relative lg:pt-0 gap-8 md:gap-4 lg:mt-0">
+            <div className="flex-1 w-full flex items-center justify-center lg:justify-end h-full">
                 {/* Sun Visual */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.6 }}
@@ -130,8 +116,8 @@ export default function Hero() {
                     className="relative flex items-center justify-center lg:mb-[-80px] z-10"
                 >
                     <svg
-                        width="260"
-                        height="260"
+                        width="500"
+                        height="500"
                         viewBox="0 0 260 260"
                         fill="none"
                         className="overflow-visible scale-90 md:scale-110"
@@ -255,99 +241,7 @@ export default function Hero() {
                             fill="url(#sg5)"
                             className="animate-[pulse_4s_ease-in-out_infinite]"
                         />
-                        <text
-                            x="130"
-                            y="126"
-                            textAnchor="middle"
-                            className="font-brand text-[13px] font-[900] fill-panel-dark opacity-85 uppercase select-none"
-                        >
-                            SOLR
-                        </text>
-                        <text
-                            x="130"
-                            y="141"
-                            textAnchor="middle"
-                            className="font-brand text-[9px] font-[500] fill-panel-dark opacity-55 uppercase select-none"
-                        >
-                            TOKEN
-                        </text>
                     </svg>
-                </motion.div>
-
-                {/* Dashboard Card */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 20 }}
-                    transition={{
-                        type: "spring",
-                        damping: 15,
-                        stiffness: 60,
-                        delay: 0.8,
-                    }}
-                    className="w-full max-w-md bg-amber-deep/5 backdrop-blur-xl border border-panel-dark-border rounded-t-2xl overflow-hidden shadow-2xl relative z-20 transition-all hover:border-amber/40"
-                >
-                    <div className="bg-amber-pale/5 px-4 py-2 flex items-center justify-between border-b border-panel-dark-border">
-                        <div className="flex gap-1.5">
-                            <div className="w-2 h-2 rounded-full bg-amber/30" />
-                            <div className="w-2 h-2 rounded-full bg-amber/20" />
-                            <div className="w-2 h-2 rounded-full bg-amber/10" />
-                        </div>
-                        <div className="text-[7px] font-brand text-panel-dark-muted/60 tracking-widest">
-                            app.amev.io/dashboard
-                        </div>
-                    </div>
-                    <div className="p-4 flex flex-col gap-4">
-                        <div className="flex justify-between items-center">
-                            <div className="flex items-center gap-3">
-                                <div className="text-2xl animate-bounce">
-                                    ☀️
-                                </div>
-                                <div>
-                                    <div className="font-brand text-xl font-bold text-panel-dark-text">
-                                        SOLR Token
-                                    </div>
-                                    <div className="font-brand text-[10px] text-panel-dark-muted/60 uppercase tracking-wider">
-                                        1 token = 1 kWh generated
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="font-brand text-xl font-black text-panel-dark-text">
-                                    $0.0412
-                                </div>
-                                <div className="font-brand text-[10px] font-bold text-green-400">
-                                    ↑ +2.3% today
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-2">
-                            {tokenStats.map((stat) => (
-                                <div
-                                    key={stat.label}
-                                    className="bg-amber/5 border border-amber/10 p-2 rounded-xl hover:bg-amber/10 transition-colors cursor-default"
-                                >
-                                    <div className="font-brand text-[10px] font-bold text-amber/30 uppercase tracking-widest mb-1">
-                                        {stat.label}
-                                    </div>
-                                    <div
-                                        className={`font-brand text-l font-black ${stat.up ? "text-green-400" : "text-panel-dark-text"}`}
-                                    >
-                                        {stat.value}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="bg-amber/10 border border-amber/20 p-2 rounded-xl flex justify-between items-center">
-                            <div className="font-brand text-[10px] font-bold text-amber/50 uppercase">
-                                Est. monthly earnings · 100kW system
-                            </div>
-                            <div className="font-brand text-lg font-black text-amber">
-                                ~$1,880 / mo
-                            </div>
-                        </div>
-                    </div>
                 </motion.div>
             </div>
         </section>
