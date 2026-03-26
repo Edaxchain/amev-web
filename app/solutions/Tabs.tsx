@@ -6,11 +6,8 @@ import {
     Building2,
     Landmark,
     Waves,
-    ArrowRight,
     CheckCircle2,
 } from "lucide-react";
-import { Button } from "@/app/_components/ui/button";
-import Link from "next/link";
 
 const tabs = [
     {
