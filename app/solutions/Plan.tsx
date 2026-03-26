@@ -166,7 +166,7 @@ export default function Plan() {
                                 ${
                                     plan.highlight
                                         ? "bg-panel-dark border-panel-dark-border text-white shadow-xl shadow-black/10 scale-105 z-10"
-                                        : "bg-white border-divider text-text-main hover:border-amber/40 shadow-sm"
+                                        : "bg-bg-raised border-divider text-text-main hover:border-amber/40 shadow-sm"
                                 }
                             `}
                         >
