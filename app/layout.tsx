@@ -17,21 +17,21 @@ export default async function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body>
                 <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-              {/*
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    {/*
                 <NextIntlClientProvider messages={messages}>
                     <WalletContextProvider>
                     */}
-                        <Navbar />
-                        
-                        <main>{children}</main>
-                        
-                        <Footer />
-                        {/*
+                    <Navbar />
+
+                    <main>{children}</main>
+
+                    <Footer />
+                    {/*
                     </WalletContextProvider>
                 </NextIntlClientProvider>
                 */}

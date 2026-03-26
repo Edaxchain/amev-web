@@ -26,7 +26,7 @@ const impacts = [
         desc: "Long-term goal of becoming the electricity distribution centre of ASEAN — transmitting renewable energy across Southeast Asia.",
         status: "2027–2029",
         icon: "🌏",
-    }
+    },
 ];
 
 export default function CommunityImpact() {
@@ -34,24 +34,27 @@ export default function CommunityImpact() {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-        }
+            transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+        },
     };
 
     const itemVars: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: {
-            opacity: 1, y: 0,
-            transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-        }
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+        },
     };
 
     return (
-        <section id="community_impact" className="relative bg-panel-dark py-10 md:py-12 overflow-hidden border-t border-border/5">
+        <section
+            id="community_impact"
+            className="relative bg-panel-dark py-10 md:py-12 overflow-hidden border-t border-border/5"
+        >
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-amber-deep/15 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
 
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px] relative z-10">
-
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-8">
                     <motion.div
@@ -62,14 +65,17 @@ export default function CommunityImpact() {
                         className="max-w-2xl"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="h-[1px] w-8 bg-amber" />
+                            <div className="h-px w-8 bg-amber" />
                             <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
                                 Community Impact
                             </span>
                         </div>
-                        <h2 className="font-brand text-4xl font-[900] text-panel-dark-text leading-none tracking-tight">
-                            Energy that gives back<br />
-                            <span className="italic font-editorial font-light text-amber-deep">to the community.</span>
+                        <h2 className="font-brand text-4xl text-panel-dark-text leading-none tracking-tight font-black">
+                            Energy that gives back
+                            <br />
+                            <span className="italic font-editorial font-light text-amber-deep">
+                                to the community.
+                            </span>
                         </h2>
                     </motion.div>
 
@@ -80,7 +86,9 @@ export default function CommunityImpact() {
                         transition={{ duration: 0.8 }}
                         className="font-brand text-[13px] text-panel-dark-muted max-w-[280px] text-left md:text-right md:pt-12 leading-relaxed"
                     >
-                        The ISC Project is designed to generate sustainable income for local communities — not just electricity for the grid.
+                        The ISC Project is designed to generate sustainable
+                        income for local communities — not just electricity for
+                        the grid.
                     </motion.p>
                 </div>
 
@@ -90,7 +98,7 @@ export default function CommunityImpact() {
                     variants={containerVars}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true }}
                 >
                     {impacts.map((item) => (
                         <motion.div
@@ -113,15 +121,13 @@ export default function CommunityImpact() {
                                 {item.desc}
                             </p>
                             <div className="flex flex-col">
-                                <span className="font-brand text-xl font-[900] text-amber tracking-tighter">
+                                <span className="font-brand text-xl text-amber tracking-tighter">
                                     {item.status}
                                 </span>
                             </div>
-
                         </motion.div>
                     ))}
                 </motion.div>
-
             </div>
         </section>
     );

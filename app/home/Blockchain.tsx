@@ -34,12 +34,12 @@ export default function BlockchainSection() {
 
                     <div>
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="h-[1px] w-8 bg-amber" />
+                            <div className="h-px w-8 bg-amber" />
                             <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
                                 Fintech & Blockchain
                             </span>
                         </div>
-                        <h2 className="font-brand text-4xl font-[900] text-text-main leading-none">
+                        <h2 className="font-brand text-4xl text-text-main leading-none font-black ">
                             The technology<br />
                             <span className="italic font-editorial font-light text-amber-deep">powering the grid.</span>
                         </h2>
