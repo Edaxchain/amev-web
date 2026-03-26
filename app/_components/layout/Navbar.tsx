@@ -10,10 +10,10 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const menuItems = [
         { title: 'About', href: '/about' },
-        { title: 'Solutions', href: '/' },
-        { title: 'Technology', href: '/' },
+        { title: 'Solutions', href: '/solutions' },
+        { title: 'Technology', href: '/technology' },
         { title: 'Ecosystem', href: '/ecosystem' },
-        { title: 'Tokenomic', href: '/' },
+        { title: 'Tokenomic', href: '/tokenomic' },
         { title: 'Contact', href: '/contact' }
     ];
     return (
