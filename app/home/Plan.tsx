@@ -169,9 +169,9 @@ export default function Plan() {
                         transition={{ duration: 0.8 }}
                         className="max-w-xl font-brand text-[13px] md:text-right md:pt-12 leading-relaxed text-text-sub text-right "
                     >
-                        Sustainable urban development in the future under the
-                        development framework of the Renewable Energy Power
-                        Plant Industry.
+                        Sustainable urban development <br />
+                        in the future under the development framework <br />
+                        of the Renewable Energy Power Plant Industry.
                     </motion.p>
                 </div>
 

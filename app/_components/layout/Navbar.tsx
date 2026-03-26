@@ -9,12 +9,13 @@ import { ModeToggle } from "@/app/_components/ui/modeToggle"
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const menuItems = [
-        { title: 'About', href: '/about' },
-        { title: 'Solutions', href: '/' },
-        { title: 'Technology', href: '/' },
-        { title: 'Ecosystem', href: '/ecosystem' },
-        { title: 'Tokenomic', href: '/' },
-        { title: 'Contact', href: '/contact' }
+        { title: "About", href: "/about" },
+        { title: "Project", href: "/project" },
+        { title: "Solutions", href: "/solutions" },
+        { title: "Technology", href: "/technology" },
+        { title: "Community", href: "/community" },
+        { title: "Partners", href: "/partners" },
+        { title: "Contact", href: "/contact" },
     ];
     return (
         <>

@@ -109,10 +109,10 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function Plan() {
     return (
-        <section className="py-24 bg-background overflow-hidden">
-            <div className="mx-auto px-6 md:px-[52px]">
+        <section className="py-16 md:py-20 bg-background overflow-hidden relative">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-[52px]">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
                     <div>
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -162,10 +162,10 @@ export default function Plan() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: i * 0.15 }}
                             className={`
-                                group relative p-8 rounded-3xl border transition-all duration-500 hover:shadow-2xl
+                                group relative p-6 md:p-7 rounded-3xl border transition-all duration-500 hover:shadow-2xl flex flex-col
                                 ${
                                     plan.highlight
-                                        ? "bg-panel-dark border-panel-dark-border text-white shadow-xl shadow-black/10 scale-105 z-10"
+                                        ? "bg-black border-amber text-white shadow-xl shadow-amber/20 scale-105 z-10"
                                         : "bg-bg-raised border-divider text-text-main hover:border-amber/40 shadow-sm"
                                 }
                             `}
@@ -180,30 +180,24 @@ export default function Plan() {
 
                             <div className="relative z-10 flex flex-col h-full">
                                 {/* Plan Header */}
-                                <div className="flex items-start justify-between mb-8">
+                                <div className="flex items-start justify-between mb-6">
                                     <div
-                                        className={`p-4 rounded-2xl ${plan.highlight ? "bg-amber/10 border border-amber/20" : "bg-bg-secondary border border-divider"} group-hover:scale-110 transition-transform duration-500`}
+                                        className={`p-3.5 rounded-2xl ${plan.highlight ? "bg-amber/10 border border-amber/20" : "bg-bg-secondary border border-divider"} group-hover:scale-110 transition-transform duration-500`}
                                     >
-                                        <div
-                                            className={
-                                                plan.highlight
-                                                    ? "text-amber"
-                                                    : "text-amber-deep"
-                                            }
-                                        >
+                                        <div className="text-amber-deep">
                                             {plan.icon}
                                         </div>
                                     </div>
                                     <span
-                                        className={`font-brand text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full ${plan.highlight ? "bg-white/10 text-amber-pale" : "bg-bg-secondary text-text-sub"}`}
+                                        className={`font-brand text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full ${plan.highlight ? "bg-white/10 text-amber" : "bg-bg-secondary text-text-sub"}`}
                                     >
                                         {plan.tag}
                                     </span>
                                 </div>
 
-                                <div className="mb-8">
+                                <div className="mb-6">
                                     <div
-                                        className={`font-brand text-[10px] font-bold uppercase tracking-[0.2em] mb-2 ${plan.highlight ? "text-amber-pale/60" : "text-amber-deep/60"}`}
+                                        className={`font-brand text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5 ${plan.highlight ? "text-amber/60" : "text-amber-deep/60"}`}
                                     >
                                         {plan.type}
                                     </div>
@@ -213,26 +207,27 @@ export default function Plan() {
                                         {plan.title.split(" · ")[0]}
                                     </h3>
                                     <div
-                                        className={`font-brand text-sm font-medium ${plan.highlight ? "text-panel-dark-muted" : "text-text-sub"}`}
+                                        className={`font-brand text-sm font-medium ${plan.highlight ? "text-white/60" : "text-text-sub"}`}
                                     >
                                         {plan.title.split(" · ")[1]}
                                     </div>
                                 </div>
 
-                                {/* Stats List */}
-                                <div className="space-y-4 mb-10 flex-1">
+                                {/* Stats Grid */}
+                                <div className="grid grid-cols-2 gap-x-4 gap-y-6 mb-8 flex-1">
                                     {plan.stats.map((stat, idx) => (
                                         <div
                                             key={idx}
-                                            className="flex flex-col gap-1 border-b border-divider/10 pb-4 last:border-0 last:pb-0"
+                                            className="flex flex-col gap-1"
                                         >
                                             <div
-                                                className={`font-brand text-[10px] font-bold uppercase tracking-wider flex items-center gap-2 ${plan.highlight ? "text-panel-dark-muted" : "text-text-sub"}`}
+                                                className={`font-brand text-[10px] font-bold uppercase tracking-wider flex items-center gap-2 ${plan.highlight ? "text-white/50" : "text-text-sub"}`}
                                             >
-                                                {stat.icon}
                                                 {stat.label}
                                             </div>
-                                            <div className="font-brand text-lg font-black tracking-tight">
+                                            <div
+                                                className={`font-brand text-sm font-black tracking-tight ${plan.highlight ? "text-white" : "text-text-main"}`}
+                                            >
                                                 {stat.value}
                                             </div>
                                         </div>
@@ -241,22 +236,24 @@ export default function Plan() {
 
                                 {/* Monthly Total */}
                                 <div
-                                    className={`mt-auto p-6 rounded-3xl ${plan.highlight ? "bg-white/5 border border-white/10" : "bg-panel-dark text-white"} transition-transform group-hover:scale-[1.02] duration-300`}
+                                    className={`mt-auto p-5 rounded-3xl ${plan.highlight ? "bg-white/5 border border-white/10" : "bg-bg-tertiary border border-divider"} transition-transform group-hover:scale-[1.02] duration-300`}
                                 >
-                                    <div className="font-brand text-[9px] font-bold text-amber uppercase tracking-widest mb-1">
+                                    <div
+                                        className={`font-brand text-[9px] font-bold uppercase tracking-widest mb-1 ${plan.highlight ? "text-amber" : "text-amber-deep"}`}
+                                    >
                                         Estimated monthly total
                                     </div>
-                                    <div className="flex items-baseline justify-between">
-                                        <div className="font-brand text-3xl font-black">
+                                    <div className="flex items-baseline justify-between gap-2">
+                                        <div
+                                            className={`font-brand text-2xl font-black ${plan.highlight ? "text-white" : "text-text-main"}`}
+                                        >
                                             {plan.monthly.split(" / ")[0]}
-                                            <span className="text-sm font-medium opacity-60 ml-1 text-white">
+                                            <span className="text-sm font-medium opacity-60 ml-0.5">
                                                 / mo
                                             </span>
                                         </div>
-                                        <div
-                                            className={`w-8 h-8 rounded-full flex items-center justify-center ${plan.highlight ? "bg-amber text-panel-dark" : "bg-amber text-panel-dark"}`}
-                                        >
-                                            <ArrowRight size={14} />
+                                        <div className="w-7 h-7 rounded-full flex items-center justify-center bg-amber text-text-main-inverted shrink-0">
+                                            <ArrowRight size={13} />
                                         </div>
                                     </div>
                                 </div>
