@@ -38,7 +38,7 @@ export default function Blockchain() {
         >
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px] relative w-full">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-20 md:mb-24">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-8">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -89,7 +89,7 @@ export default function Blockchain() {
                         </div>
 
                         {/* Features List */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 mt-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 mt-4">
                             {blockchainFeatures.map((feature, idx) => (
                                 <div key={idx} className="flex flex-col gap-4">
                                     <div className="w-10 h-10 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center">

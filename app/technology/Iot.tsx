@@ -63,11 +63,11 @@ export default function Iot() {
     return (
         <section
             id="iot"
-            className="py-10 md:py-12 flex flex-col gap-12 lg:gap-16 border-t border-divider bg-bg-alt/30"
+            className="py-21 md:py-12 flex flex-col gap-12 lg:gap-16 border-t border-divider"
         >
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px] relative w-full">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-20">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-8">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -114,7 +114,7 @@ export default function Iot() {
                 </div>
 
                 {/* Pipeline Visualization */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 relative">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 relative">
                     {/* Connection lines (desktop) */}
                     <div className="absolute top-1/2 left-0 w-full h-px border-t border-dashed border-divider hidden lg:block -z-10" />
 

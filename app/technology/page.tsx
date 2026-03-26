@@ -2,6 +2,7 @@ import Hero from "./Hero";
 import Architecture from "./Architecture";
 import Blockchain from "./Blockchain";
 import Iot from "./Iot";
+import Protocol from "./Protocol";
 
 export default function TechnologyPage() {
     return (
@@ -9,7 +10,8 @@ export default function TechnologyPage() {
             <Hero />
             <Architecture />
             <Blockchain />
-            <Iot/>
+            <Iot />
+            <Protocol />
         </main>
     );
 }
