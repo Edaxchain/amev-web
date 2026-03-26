@@ -6,12 +6,10 @@ import { Button } from "@/app/_components/ui/button";
 
 export default function ProjectBackground() {
     return (
-        <section
-            id="project_background"
-            className="bg-background py-10 md:py-12"
-        >
+        <section id="project_background" className="bg-background py-10 md:py-12">
             <div className="max-w-[1440px] mx-auto px-6 md:px-[52px]">
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-center">
+
                     {/* Left Content Text */}
                     <motion.div
                         className="flex-1"
