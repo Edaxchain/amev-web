@@ -1,59 +1,63 @@
 :root {
-    --background: #FDFAF2;
-    --bg-secondary: #F6EFD8;
-    --bg-tertiary: #EDE4C8;
-    --foreground: #1A1206;
-    --text-main: #1A1206;
+    --background: #fdfaf2;
+    --bg-secondary: #f6efd8;
+    --bg-tertiary: #ede4c8;
+    --foreground: #1a1206;
+    --text-main: #1a1206;
     --text-sub: rgba(26, 18, 6, 0.45);
+    --text-main-inverted: #fdfaf2;
+    --text-sub-inverted: rgba(253, 250, 242, 0.45);
     --border: rgba(26, 18, 6, 0.07);
-    --divider: #E2D9C0;
-    --button-primary: #F5A623;
-    --button-primary-text: #0C0A06;
-    --button-primary-hover: #FDE9B8;
-    --button-secondary: #0C0A06;
-    --button-secondary-text: #FDFAF2;
+    --divider: #e2d9c0;
+    --button-primary: #f5a623;
+    --button-primary-text: #0c0a06;
+    --button-primary-hover: #fde9b8;
+    --button-secondary: #0c0a06;
+    --button-secondary-text: #fdfaf2;
     --button-secondary-hover: #28241d;
-    --amber: #F5A623;
-    --amber-deep: #C47B1A;
+    --amber: #f5a623;
+    --amber-deep: #c47b1a;
     --amber-light: #e48f21;
-    --amber-pale: #FDE9B8;
-    --amber-tint: rgba(245, 166, 35, 0.10);
+    --amber-pale: #fde9b8;
+    --amber-tint: rgba(245, 166, 35, 0.1);
     --amber-dim: rgba(245, 166, 35, 0.18);
     --amber-border: rgba(245, 166, 35, 0.18);
-    --panel-dark: #0C0904;
-    --panel-dark-text: #FDFAF2;
+    --bg-raised: #fdfaf2;
+    --panel-dark: #0c0904;
+    --panel-dark-text: #fdfaf2;
     --panel-dark-muted: rgba(253, 250, 242, 0.45);
     --panel-dark-border: rgba(245, 166, 35, 0.18);
 }
 
 .dark {
-    --background: #0C0A06;
+    --background: #0c0a06;
     --bg-secondary: #161410;
-    --bg-tertiary: #1E1B14;
-    --foreground: #FDFAF2;
-    --text-main: #FDFAF2;
+    --bg-tertiary: #1e1b14;
+    --foreground: #fdfaf2;
+    --text-main: #fdfaf2;
     --text-sub: rgba(253, 250, 242, 0.45);
+    --text-main-inverted: #1a1206;
+    --text-sub-inverted: rgba(26, 18, 6, 0.45);
     --border: rgba(245, 166, 35, 0.12);
     --divider: rgba(245, 166, 35, 0.08);
-    --button-primary: #F5A623;
-    --button-primary-text: #0C0A06;
-    --button-primary-hover: #FDE9B8;
-    --button-secondary: #0C0A06;
-    --button-secondary-text: #FDFAF2;
-    --button-secondary-hover: #1A1206;
-    --amber: #F5A623;
-    --amber-deep: #C47B1A;
+    --button-primary: #f5a623;
+    --button-primary-text: #0c0a06;
+    --button-primary-hover: #fde9b8;
+    --button-secondary: #0c0a06;
+    --button-secondary-text: #fdfaf2;
+    --button-secondary-hover: #1a1206;
+    --amber: #f5a623;
+    --amber-deep: #c47b1a;
     --amber-light: #e48f21;
-    --amber-pale: #FDE9B8;
-    --amber-tint: rgba(245, 166, 35, 0.10);
+    --amber-pale: #fde9b8;
+    --amber-tint: rgba(245, 166, 35, 0.1);
     --amber-dim: rgba(245, 166, 35, 0.18);
     --amber-border: rgba(245, 166, 35, 0.18);
-    --bg-raised: #2A261C;
-    --panel-dark: #0C0904;
-    --panel-dark-text: #FDFAF2;
+    --bg-raised: #2a261c;
+    --panel-dark: #0c0904;
+    --panel-dark-text: #fdfaf2;
     --panel-dark-muted: rgba(253, 250, 242, 0.45);
     --panel-dark-border: rgba(245, 166, 35, 0.18);
-
 }
 
 @theme {
@@ -64,6 +68,8 @@
     --color-bg-raised: var(--bg-raised);
     --color-text-main: var(--text-main);
     --color-text-sub: var(--text-sub);
+    --color-text-main-inverted: var(--text-main-inverted);
+    --color-text-sub-inverted: var(--text-sub-inverted);
     --color-border: var(--border);
     --color-divider: var(--divider);
     --color-amber-border: var(--amber-border);
