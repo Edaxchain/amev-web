@@ -1,71 +1,17 @@
 "use client";
 
-import { motion, animate, useInView, Variants } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-
-interface CountUpNumberProps {
-    value: string;
-    duration?: number;
-}
-
-function CountUpNumber({ value, duration = 2 }: CountUpNumberProps) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" }); // นับเมื่อ Scroll มาถึง
-    const [displayValue, setDisplayValue] = useState("0");
-
-    // แยกตัวเลขออกจาก Text (เช่น "368 MW" -> 368)
-    const numericPart = parseInt(
-        value.replace(/,/g, "").match(/\d+/)?.at(0) || "0",
-        10,
-    );
-    const textPart = value.replace(numericPart.toString(), "");
-
-    useEffect(() => {
-        if (isInView) {
-            // สร้าง Animation สำหรับการนับเลข
-            const controls = animate(0, numericPart, {
-                duration: duration,
-                ease: [0.22, 1, 0.36, 1], // จังหวะนุ่มนวลแบบ Solarc
-                onUpdate(latest) {
-                    // ปรับรูปแบบตัวเลข เช่น ใส่ comma
-                    const formatted =
-                        Math.floor(latest).toLocaleString("en-US");
-                    setDisplayValue(formatted + textPart);
-                },
-            });
-
-            return () => controls.stop();
-        }
-    }, [isInView, numericPart, duration, textPart]);
-
-    return <span ref={ref} className="text-black">{displayValue}</span>;
-}
+import { motion } from "framer-motion";
+import { itemVars, containerVars } from "@/app/_lib/animations";
+import CountUpNumber from "@/app/_lib/count";
 
 const stats = [
     { label: "Total Capacity", value: "368 MW" },
     { label: "Acres · Phase 1", value: "1,557" },
     { label: "Coverage · Thailand", value: "5 provinces" },
-    { label: "Implementation Plan", value: "2021—2029" },
+    { label: "Implementation Plan", value: "2021-2029" },
 ];
 
 export default function ProjectStats() {
-    const containerVars = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.15, delayChildren: 0.1 },
-        },
-    };
-
-    const itemVars: Variants = {
-        hidden: { opacity: 0, y: 15 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6, ease: "easeOut" },
-        },
-    };
-
     return (
         <section
             id="stats"
