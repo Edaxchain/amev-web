@@ -3,6 +3,7 @@ import HeaderT from "./HeaderT"
 import TokenUtility from "./Utility";
 import TokenAllocation from "./Allocation";
 import MintingModel from "./Minting";
+import ConnectWalletSection from "./WalletT";
 
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function TokenomicPage() {
             <TokenUtility />
             <MintingModel />
             <TokenAllocation/>
+            <ConnectWalletSection />
         </main>
     );
 }
