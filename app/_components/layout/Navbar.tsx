@@ -22,10 +22,12 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <div className="flex items-center gap-[9px] font-brand text-[18px] font-[900] text-text-main tracking-[-0.3px] cursor-pointer group shrink-0">
+                    <Link href={'/'}>
                     <div className="logo-sun w-[28px] h-[28px] rounded-full bg-amber flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_0_4px_rgba(245,166,35,0.2),0_0_16px_rgba(245,166,35,0.3)]">
                         <Sun size={16} strokeWidth={2.5} fill="currentColor" />
                     </div>
                     <span className="block uppercase"> AMEV </span>
+                    </Link>
                 </div>
 
                 {/* Desktop Menu */}
