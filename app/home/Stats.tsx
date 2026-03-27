@@ -42,7 +42,7 @@ export default function ProjectStats() {
                                 />
                             </h2>
 
-                            <p className="font-brand text-[10px] md:text-[11px] font-bold text-text-sub uppercase tracking-[0.15em] transition-colors">
+                            <p className="font-brand text-[10px] md:text-[11px] font-bold text-black uppercase tracking-[0.15em] transition-colors">
                                 {stat.label}
                             </p>
                         </motion.div>

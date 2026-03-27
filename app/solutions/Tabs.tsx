@@ -6,11 +6,8 @@ import {
     Building2,
     Landmark,
     Waves,
-    ArrowRight,
     CheckCircle2,
 } from "lucide-react";
-import { Button } from "@/app/_components/ui/button";
-import Link from "next/link";
 
 const tabs = [
     {
@@ -62,10 +59,8 @@ export default function Tabs() {
 
     return (
         <section className="bg-background py-10 md:py-12 relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-amber/5 blur-[100px] rounded-full pointer-events-none" />
 
-            <div className="mx-auto px-6 md:px-[52px]">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-[52px]">
                 {/* Header */}
                 <div className="max-w-3xl mb-12">
                     <div className="flex items-center gap-3 mb-6">

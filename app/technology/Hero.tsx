@@ -45,7 +45,15 @@ export default function Hero() {
                     >
                         <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
                         <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
-                            Solar Installation Solutions
+                            Technology
+                        </span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+                        <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
+                            Infrastructure
+                        </span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+                        <span className="font-brand text-[10px] font-bold text-amber-deep uppercase tracking-[0.3em]">
+                            Protocol
                         </span>
                     </motion.div>
 
@@ -54,11 +62,11 @@ export default function Hero() {
                         variants={itemVars}
                         className="font-brand text-4xl md:text-6xl font-black text-panel-dark-text leading-[0.95] tracking-tighter mb-6"
                     >
-                        Every site <br />
-                        has a <span className="text-amber">solar</span>
+                        The tech that <br />
+                        makes <span className="text-amber">energy</span>
                         <br />
                         <span className="italic font-editorial font-light text-panel-dark-text">
-                            solution.
+                            on-chain.
                         </span>
                     </motion.h1>
 
@@ -66,12 +74,13 @@ export default function Hero() {
                         variants={itemVars}
                         className="font-brand text-lg text-panel-dark-muted leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0"
                     >
-                        Three installation types designed for every location.
-                        Rooftops, open land, or water bodies — each generates{" "}
+                        Solarc's infrastructure connects{" "}
                         <span className="text-panel-dark-text">
-                            SOLR tokens automatically
+                            physical solar installations
                         </span>{" "}
-                        from day one.
+                        to the Solana blockchain through a purpose-built IoT
+                        oracle bridge — automatically converting real energy
+                        into verified digital tokens.
                     </motion.p>
 
                     {/* Buttons */}
@@ -79,19 +88,24 @@ export default function Hero() {
                         variants={itemVars}
                         className="flex flex-wrap justify-center lg:justify-start gap-2 mb-4"
                     >
-                        {["Solar Rooftop", "Solar Farm", "Solar Floating"].map(
-                            (text) => (
-                                <div
-                                    key={text}
-                                    className="flex items-center gap-2 bg-amber-deep/10 border border-amber-border/60 px-3 py-1.5 rounded-full shadow-sm"
-                                >
-                                    <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
-                                    <span className="font-brand text-[10px] tracking-wider text-amber">
-                                        {text}
-                                    </span>
-                                </div>
-                            ),
-                        )}
+                        {[
+                            "Solana SPL",
+                            "IoT Oracle",
+                            "Smart Contracts",
+                            "IEC 61215",
+                            "AES-256",
+                            "REC On-chain",
+                        ].map((text) => (
+                            <div
+                                key={text}
+                                className="flex items-center gap-2 bg-amber-deep/10 border border-amber-border/60 px-3 py-1.5 rounded-full shadow-sm"
+                            >
+                                <div className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+                                <span className="font-brand text-[10px] tracking-wider text-amber">
+                                    {text}
+                                </span>
+                            </div>
+                        ))}
                     </motion.div>
                 </div>
             </motion.div>
