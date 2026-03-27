@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import HeaderT from "./HeaderT"
 import TokenUtility from "./Utility";
 import TokenAllocation from "./Allocation";
+import MintingModel from "./Minting";
 
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function TokenomicPage() {
         <main className="flex min-h-screen flex-col bg-background">
             <HeaderT />
             <TokenUtility />
+            <MintingModel />
             <TokenAllocation/>
         </main>
     );
