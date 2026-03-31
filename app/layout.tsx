@@ -5,6 +5,14 @@ import { ThemeProvider } from "@/app/_contexts/ThemeProvider";
 //import { NextIntlClientProvider } from "next-intl";
 //import { getMessages } from "next-intl/server";
 import "./globals.css";
+import { Fraunces } from 'next/font/google'
+
+const fraunces = Fraunces({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fraunces',
+});
 
 export default async function RootLayout({
     children,
@@ -14,7 +22,7 @@ export default async function RootLayout({
     //const messages = await getMessages();
 
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" className={fraunces.variable} suppressHydrationWarning>
             <body>
                 <ThemeProvider
                     attribute="class"

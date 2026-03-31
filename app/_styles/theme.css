@@ -90,6 +90,6 @@
     --color-panel-dark-muted: var(--panel-dark-muted);
     --color-panel-dark-border: var(--panel-dark-border);
 
-    --font-brand: "Cabinet Grotesk", sans-serif;
-    --font-editorial: "Fraunces", serif;
+    --font-brand: var(--font-fraunces), sans-serif;
+    --font-editorial: var(--font-fraunces), serif;
 }
